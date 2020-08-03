@@ -14,3 +14,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 
 0. Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/full/JjXPbEe)**
 1. Creating a Layout Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0187377958254ea601fcfb9c6b5c5d5e39bbc484)
+2. Initiating the implementation of Burger Builder Container: [Commit Details]();
