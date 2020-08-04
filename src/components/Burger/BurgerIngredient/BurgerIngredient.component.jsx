@@ -7,26 +7,21 @@ import { BreadBottom, BreadTop, Salad, Bacon, Meat, Cheese } from './BurgerIngre
 
 
 const burgerIngredient = props => {
-  let ingredient = null;
-
   switch (props.type) {
-    case 'bread-top': 
-      ingredient = (
+    case 'bread-top':
+      return (
         <BreadTop>
           <div className="seeds"></div>          
           <div className="seeds2"></div>          
         </BreadTop>
       );
-      break;
-    case 'bread-bottom': ingredient = BreadBottom; break;
-    case 'bacon': ingredient = Bacon; break;
-    case 'salad': ingredient = Salad; break;
-    case 'meat': ingredient = Meat; break;
-    case 'cheese': ingredient = Cheese; break;
-    default: ingredient = null; break;
+    case 'bread-bottom': return <BreadBottom />;
+    case 'bacon': return <Bacon />;
+    case 'meat': return <Meat />;
+    case 'cheese': return <Cheese />;
+    case 'salad': return <Salad />;
+    default: return undefined;
   }
-
-  return ingredient;
 };
 
 burgerIngredient.propTypes = {
