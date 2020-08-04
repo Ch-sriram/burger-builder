@@ -17,4 +17,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 2. Initiating the implementation of Burger Builder Container: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d8d3987494ed8a0297a97d1dd3e864e3a6e7bbf4)
 3. Concept Art of the Burger using CSS: **[Code @CodePen](https://codepen.io/ch-sriram/pen/rNeByJy)**
 4. Adding Dynamic Ingredient Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c0df741dc802e801a1f4118aaea57ba1e893da40)
-5. Adding `PropType` Validation for Ingredients: [Commit Details]()
+5. Adding `PropType` Validation for Ingredients: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/47edd2792c2cdb56b2a96d1905fb89b41fca3223)
