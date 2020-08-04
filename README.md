@@ -19,3 +19,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 4. Adding Dynamic `<BurgerIngredient />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c0df741dc802e801a1f4118aaea57ba1e893da40)
 5. Adding `PropType` Validation for `<BurgerIngredient />`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/47edd2792c2cdb56b2a96d1905fb89b41fca3223)
 6. Implementation of the `<Burger />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/523b225338e21b2d5c97e212db04cf5617282ed1)
+7. Outputting `<BurgerIngredients />` Dynamically: [Commit Details]()
