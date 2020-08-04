@@ -40,4 +40,4 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/full/JjX
 ### Implementing the Toolbar & Side Drawer
 
 1. Adding a `<Toolbar />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/1f5cf0c1ae06912264691a5bd2cbdaed15d066a8)
-2. Using & Adding a Logo in our Application: [Commit Details]()
+2. Using & Adding a `<Logo />` in our Application: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/fe3e10f5665a6943e2e480ce280ce4afe06355df)
