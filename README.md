@@ -29,4 +29,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 12. Displaying & Updating the `totalPrice` in the `<Burger />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/16b0f67cca2c63257b2bddad4899b2899c03b005)
 13. Implementing and adding the `<OrderButton />`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/4b5c848b026bd9c921731a3f11ba5ae05d6a46cf)
 14. Creating the `<OrderSummary />` Modal Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/220a907178932aac83bf09d61997785edf3f0bff)
-15. Showing/Hiding the `<OrderSummary />` Modal Component w. Animation: [Commit Details]()
+15. Showing/Hiding the `<OrderSummary />` Modal Component w. Animation: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c50a7880b846b16bb0b1267034faf945d18f40e0)
