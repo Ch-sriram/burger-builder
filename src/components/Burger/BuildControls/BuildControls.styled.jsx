@@ -10,3 +10,5 @@ const BuildControls = styled.div`
   margin: auto;
   padding: 10px 0;
 `;
+
+export default BuildControls;
