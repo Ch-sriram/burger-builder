@@ -7,8 +7,13 @@ import { BuildControl, Label } from './BuildControl.styled';
 const buildControl = props => (
   <BuildControl>
     <Label>{props.label}</Label>
-    <button className="Less">Less</button>
-    <button className="More" onClick={props.added}>More</button>
+    <button
+      className="Less"
+      onClick={props.removed}
+      disabled={props.disabled}>Less</button>
+    <button
+      className="More"
+      onClick={props.added}>More</button>
   </BuildControl>
 );
 

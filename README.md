@@ -24,4 +24,5 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 9. Adding the `<BuildControl />` & `<BuildControls />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2c9be483093bc2f9015799e04844cda739f5d699)
 10. Outputting Multiple `<BuildControl />` components using the `<BuildControls />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/ab893618efaf7013c49acc06cdb1b11d8af72d29)
 11. Connecting `state` to each `<BuildControl />` & `<BuildControls />` Component
-    1. Adding `onClick` handler to the `More` button: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/bd206d7166ba60336acf25803fc2e01047b85485)
+    1. Adding Ingredients Dynamically &mdash; Connecting `onClick` handler to the `More` button: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/bd206d7166ba60336acf25803fc2e01047b85485)
+    2. Removing Ingredients Safely &mdash; Connecting `onClick` handler to the `Less` button: [Commit Details]()
