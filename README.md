@@ -20,3 +20,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 5. Adding `PropType` Validation for `<BurgerIngredient />`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/47edd2792c2cdb56b2a96d1905fb89b41fca3223)
 6. Implementation of the `<Burger />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/523b225338e21b2d5c97e212db04cf5617282ed1)
 7. Outputting `<BurgerIngredients />` Dynamically: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/1d1de276b9d7d677b43a842fc6be21fb436ec988)
+8. Calculating the `<BurgerIngredient />` Sum Dynamically using `reduce()`: [Commit Details]()
