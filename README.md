@@ -39,4 +39,4 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/full/JjX
 
 ### Implementing the Toolbar & Side Drawer
 
-1. Adding a `<Toolbar />` Component: [Commit Details]()
+1. Adding a `<Toolbar />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/1f5cf0c1ae06912264691a5bd2cbdaed15d066a8)
