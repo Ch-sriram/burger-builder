@@ -2,7 +2,7 @@
 import React from 'react';
 
 // STYLED COMPONENTS
-import BuildControls from './BuildControls.styled';
+import { BuildControls, OrderButton } from './BuildControls.styled';
 import BuildControl from './BuildControl/BuildControl.component';
 
 const controls = [
@@ -15,7 +15,7 @@ const controls = [
 const buildControls = (props) => (
   <BuildControls>
     <p>
-      Current Price: <strong>{props.price.toFixed(2)}</strong>
+      Current Price: <strong>${props.price.toFixed(2)}</strong>
     </p>
     {controls.map((control) => (
       <BuildControl
@@ -26,6 +26,8 @@ const buildControls = (props) => (
         disabled={props.disabled[control.type]}
       />
     ))}
+    <OrderButton
+      disabled={!props.purchasable}>ORDER NOW</OrderButton>
   </BuildControls>
 );
 

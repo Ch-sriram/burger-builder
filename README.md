@@ -27,3 +27,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
     1. Adding Ingredients Dynamically &mdash; Connecting `onClick` handler to the `More` button: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/bd206d7166ba60336acf25803fc2e01047b85485)
     2. Removing Ingredients Safely &mdash; Connecting `onClick` handler to the `Less` button: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/cb10e79bb824a5de9d7d617426e1cec8feac3fe3)
 12. Displaying & Updating the `totalPrice` in the `<Burger />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/16b0f67cca2c63257b2bddad4899b2899c03b005)
+13. Implementing and adding the `<OrderButton />`: [Commit Details]()
