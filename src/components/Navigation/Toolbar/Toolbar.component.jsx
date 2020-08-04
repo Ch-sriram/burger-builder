@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // OUR CUSTOM COMPONENTS
 import Logo from '../../Logo/Logo.component';
+import NavigationItems from '../NavigationItems/NavigationItems.component';
 
 // Custom Toolbar
 const Toolbar = styled.header`
@@ -30,7 +31,7 @@ const toolbar = props => (
     <div>MENU</div>
     <Logo />
     <nav>
-      ...
+      <NavigationItems />
     </nav>
   </Toolbar>
 );
