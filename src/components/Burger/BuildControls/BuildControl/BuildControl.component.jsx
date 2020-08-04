@@ -8,7 +8,7 @@ const buildControl = props => (
   <BuildControl>
     <Label>{props.label}</Label>
     <button className="Less">Less</button>
-    <button className="More">More</button>
+    <button className="More" onClick={props.added}>More</button>
   </BuildControl>
 );
 
