@@ -5,6 +5,9 @@ import styled from 'styled-components';
 // CUSTOM COMPONENTS
 import Aux from '../../../hoc/Auxiliary/Auxiliary.hoc';
 
+// STYLED IMPORTS
+import { StyledButton as Button } from '../../UI/Buttons/StyledButton.styled';
+
 const UL = styled.ul`list-style-type: circle;`;
 
 const orderSummary = props => {
@@ -22,6 +25,12 @@ const orderSummary = props => {
       <UL>{ingredientSummary}</UL>
       <h4>Price: ${props.price.toFixed(2)}</h4>
       <p>Continue to Checkout?</p>
+      <Button
+        type="danger"
+        onClick={props.orderCancelled}>CANCEL</Button>
+      <Button
+        type="success"
+        onClick={props.orderContinued}>CONTINUE</Button>
     </Aux>
   );
 };

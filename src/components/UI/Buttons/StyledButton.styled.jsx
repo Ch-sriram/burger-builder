@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   padding: 10px;
   margin: 10px;
   font-weight: bold;
-  color: ${props => props.color.toLowerCase() === 'success' ? '#5C9210' : '#944317'};
+  color: ${props => props.type.toLowerCase() === 'success' ? '#5C9210' : '#944317'};
 
   &:first-of-type {
     margin-left: 0;

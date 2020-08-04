@@ -32,3 +32,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 15. Showing/Hiding the `<OrderSummary />` Modal Component w. Animation: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c50a7880b846b16bb0b1267034faf945d18f40e0)
 16. Implementing a `<Backdrop />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d97b727fe03205c73aaad09d223f08dd18febcb4)
 17. Adding a Custom Button `<StyledButton />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d97b727fe03205c73aaad09d223f08dd18febcb4)
+18. Implementing the Functionality of the `<StyledButton />` Component: [Commit Details]()
