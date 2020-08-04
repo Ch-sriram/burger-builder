@@ -37,6 +37,6 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/full/JjX
 17. Adding a Custom Button `<StyledButton />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d97b727fe03205c73aaad09d223f08dd18febcb4)
 18. Implementing the Functionality of the `<StyledButton />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/afd95bf43088d39c1e3a2ef626028dc4f2603259)
 
-### Adding the Toolbar & Side Drawer
+### Implementing the Toolbar & Side Drawer
 
-1. 
+1. Adding a `<Toolbar />` Component: [Commit Details]()
