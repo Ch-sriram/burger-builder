@@ -21,3 +21,4 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 6. Implementation of the `<Burger />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/523b225338e21b2d5c97e212db04cf5617282ed1)
 7. Outputting `<BurgerIngredients />` Dynamically: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/1d1de276b9d7d677b43a842fc6be21fb436ec988)
 8. Calculating the `<BurgerIngredient />` Sum Dynamically using `reduce()`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0be94dfd71b0280de5aa7f1ff2233fe5ac65c685)
+9. Adding the `<BuildControl />` & `<BuildControls />` Component: [Commit Details]()
