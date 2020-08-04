@@ -1,6 +1,11 @@
+// LIBRARY IMPORTS
 import React from 'react';
 import styled from 'styled-components';
 
+// OUR CUSTOM COMPONENTS
+import Logo from '../../Logo/Logo.component';
+
+// Custom Toolbar
 const Toolbar = styled.header`
   height: 56px;
   width: 100%;
@@ -23,7 +28,7 @@ const Toolbar = styled.header`
 const toolbar = props => (
   <Toolbar>
     <div>MENU</div>
-    <div>LOGO</div>
+    <Logo />
     <nav>
       ...
     </nav>
