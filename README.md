@@ -12,7 +12,10 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 
 ## Development Workflow
 
-0. Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/full/JjXPbEe)**
+Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/full/JjXPbEe)**
+
+### Implementing the Core Functionality (`<BurgerBuilder/> Component`) of the App
+
 1. Creating a `<Layout />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0187377958254ea601fcfb9c6b5c5d5e39bbc484)
 2. Initiating the implementation of `<BurgerBuilder />` Container: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d8d3987494ed8a0297a97d1dd3e864e3a6e7bbf4)
 3. Concept Art of the Burger using CSS: **[Code @CodePen](https://codepen.io/ch-sriram/pen/rNeByJy)**
@@ -33,3 +36,7 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 16. Implementing a `<Backdrop />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d97b727fe03205c73aaad09d223f08dd18febcb4)
 17. Adding a Custom Button `<StyledButton />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d97b727fe03205c73aaad09d223f08dd18febcb4)
 18. Implementing the Functionality of the `<StyledButton />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/afd95bf43088d39c1e3a2ef626028dc4f2603259)
+
+### Adding the Toolbar & Side Drawer
+
+1. 
