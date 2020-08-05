@@ -12,7 +12,7 @@ NOTE: There can be more additions into the design, over iterations of the Applic
 
 ## Development Workflow
 
-Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/full/JjXPbEe)**
+Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/pen/LYNPbxq)**
 
 ### Implementing the Core Functionality (`<BurgerBuilder/> Component`) of the App
 
