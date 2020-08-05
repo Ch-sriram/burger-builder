@@ -5,6 +5,7 @@ import styled from 'styled-components';
 // OUR CUSTOM COMPONENTS
 import Logo from '../../Logo/Logo.component';
 import NavigationItems from '../NavigationItems/NavigationItems.component';
+import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle.component';
 
 // STYLED COMPONENTS - DEFINITIONS
 const Toolbar = styled.header`
@@ -40,7 +41,7 @@ const DesktopNav = styled.nav`
 
 const toolbar = props => (
   <Toolbar>
-    <div>MENU</div>
+    <DrawerToggle clicked={props.drawerToggleClicked} />
     <LogoDiv>
       <Logo />
     </LogoDiv>
