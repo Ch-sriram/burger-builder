@@ -25,10 +25,16 @@ const SideDrawer = styled.div`
   }
 `;
 
+const LogoDiv = styled.div`
+  height: 11%;
+`;
+
 const sideDrawer = props => {
   return (
     <SideDrawer status="open">
-      <Logo />
+      <LogoDiv>
+        <Logo />
+      </LogoDiv>
       <nav>
         <NavigationItems />
       </nav>

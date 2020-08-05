@@ -26,10 +26,18 @@ const Toolbar = styled.header`
   }
 `;
 
+const LogoDiv = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
 const toolbar = props => (
   <Toolbar>
     <div>MENU</div>
-    <Logo />
+    <LogoDiv>
+      <Logo />
+    </LogoDiv>
     <nav>
       <NavigationItems />
     </nav>
