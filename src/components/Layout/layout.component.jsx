@@ -10,6 +10,10 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer.component';
 // STYLED COMPONENTS
 const MainContent = styled.main`
   margin-top: 72px;
+  
+  @media (min-width: 600px) {
+    margin-top: 0;
+  }
 `;
 
 class Layout extends Component {

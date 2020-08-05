@@ -15,6 +15,11 @@ const BuildControls = styled.div`
   box-shadow: 0 2px 1px #ccc;
   margin: auto;
   padding: 10px 0;
+
+  @media (min-width: 600px) {
+    height: 97vh;
+    justify-content: center;
+  }
 `;
 
 const OrderButton = styled.button`

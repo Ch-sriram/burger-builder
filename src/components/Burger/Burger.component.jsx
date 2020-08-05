@@ -7,7 +7,7 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient.component';
 
 // STYLED COMPONENTS
 const Burger = styled.div`
-  width: 100%;
+  width: 80%;
   margin: auto;
   height: 250px;
   overflow: scroll;

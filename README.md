@@ -48,4 +48,9 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/pen/LYNP
 7. Reusing the `<Backdrop />` Component for the `<SideDrawer />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c890b62822706d56733cc0113307fe58367a21a9)
 8. Adding a `<DrawerToggle />` Component to toggle the `<SideDrawer />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/e9720a7b7011684e3fe13469f06ad5d2c3f173ba)
 9. Adding a Hamburger Icon for the `<DrawerToggle />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/40598a9b851042abe785436fae760e20f4a1f93e)
-10. **Improving the Overall Application using `shouldComponentUpdate()` for `<Modal />` Component & Removing unnecessary `.styled.jsx` files: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/f19f68ba17acb7e094741865f0397131ca991f09)**
+
+
+### Improvements & Changes Before Addition of Routing & API Calls
+
+1. **Improving the Overall Application using `shouldComponentUpdate()` for `<Modal />` Component & Removing unnecessary `.styled.jsx` files: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/f19f68ba17acb7e094741865f0397131ca991f09)**
+2. Responsive Styling Changes in the `<Layout />`, `<BuildControls />` & `<BurgerBuilder />` Components && Adding `<Wrapper />` UI Component to Make Use of CSS Grid: [Commit Details]()
