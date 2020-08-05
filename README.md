@@ -44,3 +44,4 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/pen/LYNP
 3. Adding Reusable `<NavigationItem />` inside `<NavigationItems />`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/7b491babafc6790d4523d09f195e36ef7a2c5874)
 4. Creating a Responsive `<SideDrawer />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/affec9d695647c789486a460782451a2c336f9a6)
 5. Working on Responsive Adjustments for the `<SideDrawer />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3e828543bd38fedcc80cb45d89c1c187d0aacd71)
+6. Responsive Adjustments on `<NavigationItem />` & `<NavigationItems />` Components for the `<SideDrawer />` Component: [Commit Details]()

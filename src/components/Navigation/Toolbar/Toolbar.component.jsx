@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Logo from '../../Logo/Logo.component';
 import NavigationItems from '../NavigationItems/NavigationItems.component';
 
-// Custom Toolbar
+// STYLED COMPONENTS - DEFINITIONS
 const Toolbar = styled.header`
   height: 56px;
   width: 100%;
@@ -32,15 +32,21 @@ const LogoDiv = styled.div`
   align-items: center;
 `;
 
+const DesktopNav = styled.nav`
+  @media (max-width: 499px) {
+    display: none;
+  }
+`;
+
 const toolbar = props => (
   <Toolbar>
     <div>MENU</div>
     <LogoDiv>
       <Logo />
     </LogoDiv>
-    <nav>
+    <DesktopNav>
       <NavigationItems />
-    </nav>
+    </DesktopNav>
   </Toolbar>
 );
 

@@ -27,6 +27,7 @@ const SideDrawer = styled.div`
 
 const LogoDiv = styled.div`
   height: 11%;
+  margin-bottom: 32px;
 `;
 
 const sideDrawer = props => {
