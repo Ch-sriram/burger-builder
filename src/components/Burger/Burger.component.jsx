@@ -10,7 +10,7 @@ const Burger = styled.div`
   width: 80%;
   margin: auto;
   height: 250px;
-  overflow: scroll;
+  overflow-y: auto;
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;

@@ -11,6 +11,7 @@ const StyledModal = styled.div`
   z-index: 500;
   background-color: white;
   width: 70%;
+  height: calc(100vh - 45%);
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px black;
   padding: 16px;
@@ -18,6 +19,7 @@ const StyledModal = styled.div`
   top: 30%;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
+  overflow-y: auto;
 
   @media (min-width: 600px) {
     width: 500px;
