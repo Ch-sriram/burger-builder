@@ -1,8 +1,16 @@
+// LIBRARY IMPORTS
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+// CUSTOM COMPONENTS
 import Aux from '../../hoc/Auxiliary/Auxiliary.hoc';
-import classes from './Layout.module.css';
 import Toolbar from '../Navigation/Toolbar/Toolbar.component';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer.component';
+
+// STYLED COMPONENTS
+const MainContent = styled.main`
+  margin-top: 72px;
+`;
 
 class Layout extends Component {
   state = {
@@ -26,9 +34,9 @@ class Layout extends Component {
         <SideDrawer
           open={this.state.showSideDrawer}
           closed={this.sideDrawerClosedHandler} />
-        <main className={classes.Content}>
+        <MainContent>
           {this.props.children}
-        </main>
+        </MainContent>
       </Aux>
     );
   }
