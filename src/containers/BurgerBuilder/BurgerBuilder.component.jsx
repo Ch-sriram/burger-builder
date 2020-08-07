@@ -9,6 +9,7 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls.c
 import Modal from '../../components/UI/Modal/Modal.component';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary.component';
 import Wrapper from '../../components/UI/Wrapper/Wrapper.component';
+import Spinner from '../../components/UI/Spinner/Spinner.component';
 
 const INGREDIENT_PRICES = {
   salad: 0.5,
@@ -27,7 +28,8 @@ class BurgerBuilder extends Component {
     },
     totalPrice: 4,
     purchasable: false,
-    orderNow: false
+    orderNow: false,
+    loading: false,
   };
 
   updatePurchasableState() {
@@ -80,40 +82,33 @@ class BurgerBuilder extends Component {
   }
 
   orderContinueHandler = () => {
-    /**
-     * NOTE: for production ready apps, we calculate the price
-     * at the server, because the client shouldn't have access
-     * to change the prices at their end.
-     * 
-     * Also, we are filling some customer information here
-     * manually, but later, we will add a form, where the user
-     * will fill in the form, and we will get the data 
-     * dynamically.
-     */
-    const order = {
-      ingredients: this.state.ingredients,
-      price: this.state.totalPrice,
-      customer: {
-        name: "Ch. Sriram",
-        address: {
-          street: "Crazy Street",
-          zipCode: "51251",
-          country: "Zambia"
-        },
-        email: "test@crazy.com",
-        deliveryMethod: "fastest"
-      }
-    }
-
-    /**
-     * The baseURL is taken care automatically by the axios
-     * instance we have. The route we add for a firebase DB is
-     * always appended with `.json` extension as firebase works
-     * that way.
-     */
-    axios.post('/orders.json', order)
-    .then(response => console.log(response))
-    .catch(error => console.log(error));
+    this.setState({ loading: true },
+      () => {
+        const order = {
+          ingredients: this.state.ingredients,
+          price: this.state.totalPrice,
+          customer: {
+            name: "Ch. Sriram",
+            address: {
+              street: "Crazy Street",
+              zipCode: "51251",
+              country: "Zambia"
+            },
+            email: "test@crazy.com",
+            deliveryMethod: "fastest"
+          }
+        }
+    
+        // If we comment this POSTing code, we can see the 
+        // Spinner in it's action, spinning infinitely.
+        axios.post('/orders.json', order)
+          .then(response => {
+            this.setState({ loading: false, orderNow: false });
+          })
+          .catch(error => {
+            this.setState({ loading: false, orderNow: false });
+          });
+    });
   }
 
   render() {
@@ -122,15 +117,20 @@ class BurgerBuilder extends Component {
       disabledInfo[key] = disabledInfo[key] <= 0;
     }
 
+    let orderSummary = this.state.loading ?
+      <Spinner /> : (
+        <OrderSummary
+          ingredients={this.state.ingredients}
+          price={this.state.totalPrice}
+          orderCancelled={this.orderCancelHandler}
+          orderContinued={this.orderContinueHandler}
+        />
+      );
+
     return (
       <Aux>
         <Modal show={this.state.orderNow} modalClosed={this.orderCancelHandler}>
-          <OrderSummary
-            ingredients={this.state.ingredients}
-            price={this.state.totalPrice}
-            orderCancelled={this.orderCancelHandler}
-            orderContinued={this.orderContinueHandler}
-          />
+          {orderSummary}
         </Modal>
         <Wrapper>
           <Burger ingredients={this.state.ingredients} />
