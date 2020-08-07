@@ -19,98 +19,160 @@ const INGREDIENT_PRICES = {
   bacon: 0.7
 }
 
+/**
+ * We can get the ingredients dynamically from the firebase DB,
+ * where we define the ingredients object (route) in the 
+ * firebase DB, and fetch it in here, in componentDidMount()
+ * lifecycle method. We will fetch the default ingredients from
+ * the backend database.
+ */
+
 class BurgerBuilder extends Component {
   state = {
-    ingredients: {
-      salad: 0, 
-      bacon: 0,
-      cheese: 0,
-      meat: 0
-    },
+    ingredients: null,
     totalPrice: 4,
     purchasable: false,
     orderNow: false,
     loading: false,
+    error: false,
   };
+
+  /**
+   * Fetch the default ingredients data from the DB here:
+   *  https://burger-builder-ram.firebaseio.com/ingredients
+   * 
+   * NOTE: we have to append `.json` at the end of the API
+   * endpoint in case of firebase db.
+   */
+  componentDidMount() {
+    
+    /**
+     * Now, if we deliberately omitted `.json` in the end, then
+     * in the view, the spinner will just keep on spinning 
+     * infinitely.
+     * 
+     * To correct that infinite spinning, we have to correct
+     * the code in the withErrorHandler Closure HOC, which 
+     * runs the axios.interceptors inside componentDidMount()
+     * lifecycle method, which won't be mounted at all, when 
+     * the error in here, is not fixed at all. And so, 
+     * the component in question, which is the WrappedComponent
+     * inside the withErrorHandler, which is this current 
+     * BurgerBuilder component, won't be able to handle the 
+     * error, as here also, the componentDidMount() lifecycle
+     * method handles the error, and therefore, the .catch()
+     * method, also has to be defined here, so that, the error
+     * will be handled properly.
+     */
+
+    // NOTE that `.json` is omitted to introduce an error deliberately
+    axios.get("https://burger-builder-ram.firebaseio.com/ingredients")
+      .then(response => {
+        this.setState({ ingredients: response.data },
+          () => {
+            const purchasableInfo = { ...this.state.ingredients };
+            for (let key in purchasableInfo) {
+              if (this.state.purchasable) {
+                break;
+              }
+              if (purchasableInfo[key] > 0) {
+                this.setState({ purchasable: true });
+              }
+            }
+          });
+      })
+      .catch(error => {
+        this.setState({ error: true }, () => console.log(error));
+        return error;
+      });
+  }
 
   updatePurchasableState() {
     const ingredients = { ...this.state.ingredients };
     const sum = Object.keys(ingredients)
-      .map(ingredient => ingredients[ingredient])
+      .map((ingredient) => ingredients[ingredient])
       .reduce((currSum, el) => currSum + el, 0);
     this.setState({ purchasable: sum > 0 });
   }
 
-  addIngredientHandler = type => {
+  addIngredientHandler = (type) => {
     const oldCount = this.state.ingredients[type];
     const updatedCount = oldCount + 1;
     const updatedIngredients = { ...this.state.ingredients };
     updatedIngredients[type] = updatedCount;
-    
+
     const priceAddition = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
 
-    this.setState({
-      totalPrice: newPrice,
-      ingredients: updatedIngredients
-    }, () => {this.updatePurchasableState()});
+    this.setState(
+      {
+        totalPrice: newPrice,
+        ingredients: updatedIngredients,
+      },
+      () => {
+        this.updatePurchasableState();
+      }
+    );
   };
 
-  removeIngredientHandler = type => {
+  removeIngredientHandler = (type) => {
     const oldCount = this.state.ingredients[type];
     if (oldCount <= 0) return;
     const updatedCount = oldCount - 1;
     const updatedIngredients = { ...this.state.ingredients };
     updatedIngredients[type] = updatedCount;
-    
+
     const priceDeduction = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice - priceDeduction;
 
-    this.setState({
-      totalPrice: newPrice,
-      ingredients: updatedIngredients
-    }, () => {this.updatePurchasableState()});
+    this.setState(
+      {
+        totalPrice: newPrice,
+        ingredients: updatedIngredients,
+      },
+      () => {
+        this.updatePurchasableState();
+      }
+    );
   };
 
   orderNowHandler = () => {
     this.setState({ orderNow: true });
-  }
+  };
 
   orderCancelHandler = () => {
     this.setState({ orderNow: false });
-  }
+  };
 
   orderContinueHandler = () => {
-    this.setState({ loading: true },
-      () => {
-        const order = {
-          ingredients: this.state.ingredients,
-          price: this.state.totalPrice,
-          customer: {
-            name: "Ch. Sriram",
-            address: {
-              street: "Crazy Street",
-              zipCode: "51251",
-              country: "Zambia"
-            },
-            email: "test@crazy.com",
-            deliveryMethod: "fastest"
-          }
-        }
-    
-        // We deliberately omit the `.json` in the route to 
-        // introduce an error, to see how errors pan out.
-        axios.post('/orders', order)
-          .then(response => {
-            this.setState({ loading: false, orderNow: false });
-          })
-          .catch(error => {
-            this.setState({ loading: false, orderNow: false });
-          });
+    this.setState({ loading: true }, () => {
+      const order = {
+        ingredients: this.state.ingredients,
+        price: this.state.totalPrice,
+        customer: {
+          name: "Ch. Sriram",
+          address: {
+            street: "Crazy Street",
+            zipCode: "51251",
+            country: "Zambia",
+          },
+          email: "test@crazy.com",
+          deliveryMethod: "fastest",
+        },
+      };
+
+      axios
+        .post("/orders.json", order)
+        .then((response) => {
+          this.setState({ loading: false, orderNow: false });
+        })
+        .catch((error) => {
+          this.setState({ loading: false, orderNow: false });
+        });
     });
-  }
+  };
 
   render() {
     const disabledInfo = { ...this.state.ingredients };
@@ -118,21 +180,11 @@ class BurgerBuilder extends Component {
       disabledInfo[key] = disabledInfo[key] <= 0;
     }
 
-    let orderSummary = this.state.loading ?
-      <Spinner /> : (
-        <OrderSummary
-          ingredients={this.state.ingredients}
-          price={this.state.totalPrice}
-          orderCancelled={this.orderCancelHandler}
-          orderContinued={this.orderContinueHandler}
-        />
-      );
+    let orderSummary = null,
+        burger = this.state.error ? <p style={{textAlign: 'center'}}>Ingredients can't be loaded!</p> : <Spinner />;
 
-    return (
-      <Aux>
-        <Modal show={this.state.orderNow} modalClosed={this.orderCancelHandler}>
-          {orderSummary}
-        </Modal>
+    if (this.state.ingredients) {
+      burger = (
         <Wrapper>
           <Burger ingredients={this.state.ingredients} />
           <BuildControls
@@ -144,6 +196,26 @@ class BurgerBuilder extends Component {
             ordered={this.orderNowHandler}
           />
         </Wrapper>
+      );
+
+      orderSummary = (
+        <OrderSummary
+          ingredients={this.state.ingredients}
+          price={this.state.totalPrice}
+          orderCancelled={this.orderCancelHandler}
+          orderContinued={this.orderContinueHandler}
+        />
+      );
+    }
+
+    orderSummary = this.state.loading ? <Spinner /> : orderSummary;
+
+    return (
+      <Aux>
+        <Modal show={this.state.orderNow} modalClosed={this.orderCancelHandler}>
+          {orderSummary}
+        </Modal>
+        {burger}
       </Aux>
     );
   }
