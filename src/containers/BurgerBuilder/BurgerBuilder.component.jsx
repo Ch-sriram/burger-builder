@@ -10,6 +10,7 @@ import Modal from '../../components/UI/Modal/Modal.component';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary.component';
 import Wrapper from '../../components/UI/Wrapper/Wrapper.component';
 import Spinner from '../../components/UI/Spinner/Spinner.component';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler.closureHOC';
 
 const INGREDIENT_PRICES = {
   salad: 0.5,
@@ -99,9 +100,9 @@ class BurgerBuilder extends Component {
           }
         }
     
-        // If we comment this POSTing code, we can see the 
-        // Spinner in it's action, spinning infinitely.
-        axios.post('/orders.json', order)
+        // We deliberately omit the `.json` in the route to 
+        // introduce an error, to see how errors pan out.
+        axios.post('/orders', order)
           .then(response => {
             this.setState({ loading: false, orderNow: false });
           })
@@ -148,4 +149,4 @@ class BurgerBuilder extends Component {
   }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
