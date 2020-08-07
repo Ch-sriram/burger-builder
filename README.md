@@ -53,3 +53,10 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/pen/LYNP
 
 1. Improving the Overall Application using `shouldComponentUpdate()` for `<Modal />` Component & Removing unnecessary `.styled.jsx` files: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/f19f68ba17acb7e094741865f0397131ca991f09)
 2. Responsive Styling Changes in the `<Layout />`, `<BuildControls />` & `<BurgerBuilder />` Components && Adding `<Wrapper />` UI Component to Make Use of CSS Grid: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/281b64b6882915b75a39a62106a2f8200b25571c)
+
+### Creating a Backend @Firebase & GETting/POSTing Data from/to the Server
+
+Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
+
+1. Creating a Firebase Realtime Database: [Firebase DOCS](https://firebase.google.com/docs/database/web/start)
+2. Creating the `axios` instance to access our DB: [Commit Details]()
