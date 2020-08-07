@@ -60,3 +60,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 
 1. Creating a Firebase Realtime Database: [Firebase DOCS](https://firebase.google.com/docs/database/web/start)
 2. Creating the `axios` instance to access our DB: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/beb5dcb669a15a69b733f8b289e04ab5f06cdcdd)
+3. Sending a POST Request using `axios.post()`: [Commit Details]()

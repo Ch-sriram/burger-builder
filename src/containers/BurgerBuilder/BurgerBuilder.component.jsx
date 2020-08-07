@@ -1,5 +1,6 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
+import axios from '../../axios-orders';
 
 // CUSTOM COMPONENTS
 import Aux from '../../hoc/Auxiliary/Auxiliary.hoc';
@@ -79,7 +80,40 @@ class BurgerBuilder extends Component {
   }
 
   orderContinueHandler = () => {
-    alert('Order Placed!');
+    /**
+     * NOTE: for production ready apps, we calculate the price
+     * at the server, because the client shouldn't have access
+     * to change the prices at their end.
+     * 
+     * Also, we are filling some customer information here
+     * manually, but later, we will add a form, where the user
+     * will fill in the form, and we will get the data 
+     * dynamically.
+     */
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.totalPrice,
+      customer: {
+        name: "Ch. Sriram",
+        address: {
+          street: "Crazy Street",
+          zipCode: "51251",
+          country: "Zambia"
+        },
+        email: "test@crazy.com",
+        deliveryMethod: "fastest"
+      }
+    }
+
+    /**
+     * The baseURL is taken care automatically by the axios
+     * instance we have. The route we add for a firebase DB is
+     * always appended with `.json` extension as firebase works
+     * that way.
+     */
+    axios.post('/orders.json', order)
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
   }
 
   render() {
