@@ -66,7 +66,7 @@ class BurgerBuilder extends Component {
      */
 
     // NOTE that `.json` is omitted to introduce an error deliberately
-    axios.get("https://burger-builder-ram.firebaseio.com/ingredients")
+    axios.get("https://burger-builder-ram.firebaseio.com/ingredients.json")
       .then(response => {
         this.setState({ ingredients: response.data },
           () => {
