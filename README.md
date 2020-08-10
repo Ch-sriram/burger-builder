@@ -65,3 +65,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 5. Handling Errors Globally using the `<Modal />` Component inside the `<withErrorHandler />` Closure HOC: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/74552c827692cadf1ef419214f360494ad350d81)
 6. Retrieving Data from the **[Firebase Backend](https://burger-builder-ram.firebaseio.com/ingredients)** & Resetting Error Handler inside `withErrorHandler` Closure HOC inside the `constructor()` lifecycle method: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/25931159b2254abff5398b69b3ef1d9d877a5498)
 7. De-allocating Previously Allocated Interceptors to Different Respective Components using `axios.interceptors.request/response.eject(axiosInstance)`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/56ec181898c2dd9be30af028a2f76832ce708864)
+8. Resetting the `<BurgerBuilder />` Component to show in App.js: [Commit Details]()

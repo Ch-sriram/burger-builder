@@ -19,14 +19,6 @@ const INGREDIENT_PRICES = {
   bacon: 0.7
 }
 
-/**
- * We can get the ingredients dynamically from the firebase DB,
- * where we define the ingredients object (route) in the 
- * firebase DB, and fetch it in here, in componentDidMount()
- * lifecycle method. We will fetch the default ingredients from
- * the backend database.
- */
-
 class BurgerBuilder extends Component {
   state = {
     ingredients: null,
@@ -45,27 +37,6 @@ class BurgerBuilder extends Component {
    * endpoint in case of firebase db.
    */
   componentDidMount() {
-    
-    /**
-     * Now, if we deliberately omitted `.json` in the end, then
-     * in the view, the spinner will just keep on spinning 
-     * infinitely.
-     * 
-     * To correct that infinite spinning, we have to correct
-     * the code in the withErrorHandler Closure HOC, which 
-     * runs the axios.interceptors inside componentDidMount()
-     * lifecycle method, which won't be mounted at all, when 
-     * the error in here, is not fixed at all. And so, 
-     * the component in question, which is the WrappedComponent
-     * inside the withErrorHandler, which is this current 
-     * BurgerBuilder component, won't be able to handle the 
-     * error, as here also, the componentDidMount() lifecycle
-     * method handles the error, and therefore, the .catch()
-     * method, also has to be defined here, so that, the error
-     * will be handled properly.
-     */
-
-    // NOTE that `.json` is omitted to introduce an error deliberately
     axios.get("https://burger-builder-ram.firebaseio.com/ingredients.json")
       .then(response => {
         this.setState({ ingredients: response.data },
