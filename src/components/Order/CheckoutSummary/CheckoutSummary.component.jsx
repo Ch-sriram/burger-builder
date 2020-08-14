@@ -19,6 +19,7 @@ const CheckoutDiv = styled.div`
 
   @media (min-width: 600px) {
     width: 500px;
+    margin-top: 70px;
   }
 `;
 
