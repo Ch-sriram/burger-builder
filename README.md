@@ -70,4 +70,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 ### Adding Routing using `react-router`
 
 1. Building the `<Checkout />` & `<CheckoutSummary />` Components: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/bb4ab26d36667835423c08ca13c66db4be548c82)
-2. Setting Up Routing & Routes **`npm i --save react-router-dom`**: [Commit Details]()
+2. Setting Up Routing & Routes **`npm i --save react-router-dom`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3c6460117d6ea628539b3f21b93c8cefdf8c16ff)
