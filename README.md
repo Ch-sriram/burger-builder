@@ -73,4 +73,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 2. Setting Up Routing & Routes **`npm i --save react-router-dom`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3c6460117d6ea628539b3f21b93c8cefdf8c16ff)
 3. Navigating to the Checkout Page: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0b4e6a4c06d40293f5b77cf0255f5be35680d1a8)
 4. Navigating Back & To Next Page: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/055272d5adc3d75bb447e681bf5e149d026af714)
-5. Passing `ingredients` data via Query Params using `URLSearchParams()` & `encodeURIComponent()` methods: [Commit Details]()
+5. Passing `ingredients` data via Query Params using `URLSearchParams()` & `encodeURIComponent()` methods: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/269ed08052bb9ceedabc3692510fd72c6d7650fe)
