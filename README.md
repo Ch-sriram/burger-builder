@@ -69,6 +69,8 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 
 ### Adding Routing using `react-router`
 
+**API Endpoint to fetch Orders: <https://burger-builder-ram.firebaseio.com/orders.json>**
+
 1. Building the `<Checkout />` & `<CheckoutSummary />` Components: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/bb4ab26d36667835423c08ca13c66db4be548c82)
 2. Setting Up Routing & Routes **`npm i --save react-router-dom`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3c6460117d6ea628539b3f21b93c8cefdf8c16ff)
 3. Navigating to the Checkout Page: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0b4e6a4c06d40293f5b77cf0255f5be35680d1a8)
@@ -78,3 +80,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 7. Order Submission & Passing Data Between Pages using `withRouter()` HOC: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/cd0160730a28ab8f8d96afa165e8c4858b47afc3)
 8. Adding a `<Order />` Component inside `<Orders />` Container (Page): [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/a8ecf21d53600cc3fe33ef92d100eeb651acf2c2)
 9. Implementing Navigation Links using `<NavLink />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/cd28720d9650cea831ca4c4975dfeb9c09160d8f)
+10. Fetching Orders from the **[Firebase Backend](https://burger-builder-ram.firebaseio.com/orders.json)**: [Commit Details]()
