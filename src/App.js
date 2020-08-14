@@ -1,5 +1,6 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 // CUSTOM COMPONENTS
 import Layout from './components/Layout/Layout.component';
@@ -11,8 +12,10 @@ class App extends Component {
     return (
       <div>
         <Layout>
-          <BurgerBuilder />
-          <Checkout />
+          <Switch>
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/" component={BurgerBuilder} />
+          </Switch>
         </Layout>
       </div>
     );
