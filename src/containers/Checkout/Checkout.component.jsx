@@ -5,10 +5,18 @@ import React, { Component } from 'react';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary.component';
 
 class Checkout extends Component {
-  // Dummy data in the state for now. Later on we will pass in 
-  // data regarding ingredients, using Routing
   state = {
     ingredients: { salad: 1, meat: 1, cheese: 1, bacon: 1, }
+  }
+
+  componentDidMount() {
+    const query = new URLSearchParams(this.props.location.search);
+    const ingredients = {};
+    for (let param of query.entries()) {
+      // ['salad' : '1']
+      ingredients[param[0]] = +param[1];
+    }
+    this.setState({ ingredients });
   }
   
   checkoutCancelledHandler = () => {
