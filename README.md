@@ -1,20 +1,20 @@
-# Burger Builder
+# 🍔 Burger Builder 🛠
 
 A Demo Application for Building/Customizing a Burger with Meat, Bacon, Cheese & Salad (Lettuce), built using React.
 
 Reade about installation and other details **[here](./README.react-notes.md)**
 
-## Design Overview
+## 💷 Design Overview 📝
 
-The app's layout and component structure (react) has been designed at [draw.io](https://www.draw.io), and the basic design can be found **[here](https://codepen.io/ch-sriram/full/JjXPbEe)**.
+The app's layout and component structure (react) has been designed at [draw.io](https://www.draw.io), and the basic design can be found **[here](https://codepen.io/ch-sriram/pen/LYNPbxq)**.
 
 NOTE: There can be more additions into the design, over iterations of the Application.
 
-## Development Workflow
+## 💻 Development Workflow 🌊⌚
 
 Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/pen/LYNPbxq)**
 
-### Implementing the Core Functionality of the App &mdash; `<BurgerBuilder/>` Component
+### Implementing the Core Functionality of the App &mdash; `<BurgerBuilder/>` 🍔🛠 Component
 
 1. Creating a `<Layout />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0187377958254ea601fcfb9c6b5c5d5e39bbc484)
 2. Initiating the implementation of `<BurgerBuilder />` Container: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d8d3987494ed8a0297a97d1dd3e864e3a6e7bbf4)
@@ -37,7 +37,7 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/pen/LYNP
 17. Adding a Custom Button `<StyledButton />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d97b727fe03205c73aaad09d223f08dd18febcb4)
 18. Implementing the Functionality of the `<StyledButton />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/afd95bf43088d39c1e3a2ef626028dc4f2603259)
 
-### Implementing the `<Toolbar />` & `<SideDrawer />` Components
+### Implementing the `<Toolbar />` & `<SideDrawer />` Components ⚡
 
 1. Adding a `<Toolbar />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/1f5cf0c1ae06912264691a5bd2cbdaed15d066a8)
 2. Using & Adding a `<Logo />` in our Application: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/fe3e10f5665a6943e2e480ce280ce4afe06355df)
@@ -49,12 +49,12 @@ Layout, Component & State Design: **[View](https://codepen.io/ch-sriram/pen/LYNP
 8. Adding a `<DrawerToggle />` Component to toggle the `<SideDrawer />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/e9720a7b7011684e3fe13469f06ad5d2c3f173ba)
 9. Adding a Hamburger Icon for the `<DrawerToggle />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/40598a9b851042abe785436fae760e20f4a1f93e)
 
-### Improvements & Changes Before Addition of Routing & API Calls
+### Improvements & Changes Before Addition of Routing & API Calls ⚡
 
 1. Improving the Overall Application using `shouldComponentUpdate()` for `<Modal />` Component & Removing unnecessary `.styled.jsx` files: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/f19f68ba17acb7e094741865f0397131ca991f09)
 2. Responsive Styling Changes in the `<Layout />`, `<BuildControls />` & `<BurgerBuilder />` Components && Adding `<Wrapper />` UI Component to Make Use of CSS Grid: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/281b64b6882915b75a39a62106a2f8200b25571c)
 
-### Creating a Backend @Firebase & GETting/POSTing Data from/to the Server
+### 🖥 Creating a Backend Firebase 🔥 & GETting/POSTing Data from/to the Server ☁
 
 Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 
@@ -67,7 +67,7 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 7. De-allocating Previously Allocated Interceptors to Different Respective Components using `axios.interceptors.request/response.eject(axiosInstance)`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/56ec181898c2dd9be30af028a2f76832ce708864)
 8. Resetting the `<BurgerBuilder />` Component to show in App.js: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/ae43d461e8b467b0639a066ffd1b62b70fce6424)
 
-### Adding Routing using `react-router`
+### 🔀 Adding Routing using `react-router` 🔀
 
 **API Endpoint to fetch Orders: <https://burger-builder-ram.firebaseio.com/orders.json>**
 
