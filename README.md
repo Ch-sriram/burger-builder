@@ -77,4 +77,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 6. Navigating to the `<ContactData />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/ab1083c80d9e48cb1bc13c888b7d342942772edb)
 7. Order Submission & Passing Data Between Pages using `withRouter()` HOC: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/cd0160730a28ab8f8d96afa165e8c4858b47afc3)
 8. Adding a `<Order />` Component inside `<Orders />` Container (Page): [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/a8ecf21d53600cc3fe33ef92d100eeb651acf2c2)
-9. Implementing Navigation Links using `<NavLink />` Component: [Commit Details]()
+9. Implementing Navigation Links using `<NavLink />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/cd28720d9650cea831ca4c4975dfeb9c09160d8f)
