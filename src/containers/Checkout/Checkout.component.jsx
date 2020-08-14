@@ -1,8 +1,10 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
 // CUSTOM COMPONENTS
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary.component';
+import ContactData from './ContactData/ContactData.component';
 
 class Checkout extends Component {
   state = {
@@ -35,6 +37,8 @@ class Checkout extends Component {
           checkoutCancelled={this.checkoutCancelledHandler}
           checkoutContinued={this.checkoutContinuedHandler}
         />
+        <Route
+          path={`${this.props.match.url}/contact-data`} component={ContactData} />
       </div>
     );
   }
