@@ -75,3 +75,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 4. Navigating Back & To Next Page: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/055272d5adc3d75bb447e681bf5e149d026af714)
 5. Passing `ingredients` data via Query Params using `URLSearchParams()` & `encodeURIComponent()` methods: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/269ed08052bb9ceedabc3692510fd72c6d7650fe)
 6. Navigating to the `<ContactData />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/ab1083c80d9e48cb1bc13c888b7d342942772edb)
+7. Order Submission & Passing Data Between Pages using `withRouter()` HOC: [Commit Details]()
