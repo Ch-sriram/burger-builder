@@ -85,4 +85,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 
 ### 💷 Adding Contact Form & Form Handling 📝
 
-1. Creating a Custom Dynamic `<Input />` Component: [Commit Details]()
+1. Creating a Custom Dynamic `<Input />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3576b226a1f6c453948052e66b10a3da85da10cc)
