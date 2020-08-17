@@ -48,14 +48,20 @@ const TextArea = styled.textarea`
 
 const input = props => {
   let inputElement = null;
-  switch (props.input_type) {
+  switch (props.elementType) {
     case 'input':
-      inputElement = <Input {...props} />;
+      inputElement = <Input
+        {...props.elementConfig} value={props.value} />;
       break;
+    
     case 'textarea':
-      inputElement = <TextArea {...props} />;
+      inputElement = <TextArea
+        {...props.elementConfig} value={props.value} />;
       break;
-    default: inputElement = <Input {...props} />;
+    
+    default:
+      inputElement = <Input
+      {...props.elementConfig} value={props.value} />;
   }
 
   return (

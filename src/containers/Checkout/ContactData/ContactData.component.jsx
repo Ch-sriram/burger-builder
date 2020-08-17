@@ -23,19 +23,73 @@ const FormDiv = styled.div`
 `;
 
 class ContactData extends Component {
-  // we'll add this info dynamically after we know about 
-  // handling forms in react
+  // Each field in the form is to be given a configuration
+  // wrt to its respective HTML Element (Tag) Type, and then,
+  // the Element's attributes as elementConfig
   state = {
-    name: '',
-    email: '',
-    address: {
-      street: '',
-      postalCode: '',
+    orderForm: {
+      name: {
+        elementType: "input", // type of the HTML tag used
+        elementConfig: {
+          // attributes for this element
+          type: "text",
+          placeholder: "Your Name",
+        },
+        value: "",
+      },
+      street: {
+        elementType: "input", // type of the HTML tag used
+        elementConfig: {
+          // attributes for this element
+          type: "text",
+          placeholder: "Street",
+        },
+        value: "",
+      },
+      zipCode: {
+        elementType: "input", // type of the HTML tag used
+        elementConfig: {
+          // attributes for this element
+          type: "text",
+          placeholder: "ZIP Code",
+        },
+        value: "",
+      },
+      country: {
+        elementType: "input", // type of the HTML tag used
+        elementConfig: {
+          // attributes for this element
+          type: "text",
+          placeholder: "Country",
+        },
+        value: "",
+      },
+      email: {
+        elementType: "input", // type of the HTML tag used
+        elementConfig: {
+          // attributes for this element
+          type: "email",
+          placeholder: "Your E-Mail",
+        },
+        value: "",
+      },
+      deliveryMethod: {
+        elementType: "select", // type of the HTML tag used
+        elementConfig: {
+          // attributes for this element
+          options: [
+            { value: "fastest", displayValue: "Fastest" },
+            { value: "fast", displayValue: "Fast" },
+            { value: "standard", displayValue: "Standard" },
+          ]
+        },
+        value: "",
+      },
     },
     loading: false,
-  }
+  };
 
-  orderHandler = event => {
+  orderHandler = (event) => {
     event.preventDefault(); // prevents the default action of a form, which is requesting the data from a server using the GET method.
     console.log(this.props.ingredients);
     this.setState({ loading: true }, () => {
@@ -56,29 +110,48 @@ class ContactData extends Component {
 
       axios
         .post("/orders.json", order)
-        .then(response => {
+        .then((response) => {
           this.setState({ loading: false }, () => {
             this.props.history.push("/");
             console.log(response);
             return response;
           });
         })
-        .catch(error => {
+        .catch((error) => {
           this.setState({ loading: false }, () => {
             console.log(error);
             return error;
           });
         });
     });
-  }
+  };
 
   render() {
     let form = (
       <form>
-        <Input input_type="input" type="text" name="name" placeholder="Your Name" />
-        <Input input_type="input" type="email" name="email" placeholder="Your E-Mail" />
-        <Input input_type="input" type="text" name="street" placeholder="Street Address" />
-        <Input input_type="input" type="text" name="postal" placeholder="Postal Code" />
+        <Input
+          elementType="input"
+          elementConfig="..."
+          value="..."
+        />
+        <Input
+          input_type="input"
+          type="email"
+          name="email"
+          placeholder="Your E-Mail"
+        />
+        <Input
+          input_type="input"
+          type="text"
+          name="street"
+          placeholder="Street Address"
+        />
+        <Input
+          input_type="input"
+          type="text"
+          name="postal"
+          placeholder="Postal Code"
+        />
         <Button type="success" onClick={this.orderHandler}>
           ORDER
         </Button>
@@ -86,7 +159,7 @@ class ContactData extends Component {
     );
 
     form = this.state.loading ? <Spinner /> : form;
-    
+
     return (
       <FormDiv>
         <h3>Enter Your Contact Details</h3>
