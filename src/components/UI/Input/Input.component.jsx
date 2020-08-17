@@ -41,13 +41,12 @@ const input = props => {
   let inputElement = null;
   switch (props.elementType) {
     case 'textarea':
-      inputElement = <TextArea
-        {...props.elementConfig} value={props.value} />;
+      inputElement = <TextArea {...props.elementConfig} value={props.value} onChange={props.changed}/>;
       break;
     
     case 'select':
       inputElement = (
-        <Select value={props.value}>
+        <Select value={props.value} onChange={props.changed}>
           {props.elementConfig.options.map(option =>
             <option key={option.value} value={option.value}>
               {option.displayValue}
@@ -59,8 +58,7 @@ const input = props => {
       
     case 'input':
     default:
-      inputElement = <Input
-      {...props.elementConfig} value={props.value} />;
+      inputElement = <Input {...props.elementConfig} value={props.value} onChange={props.changed}/>;
   }
 
   return (

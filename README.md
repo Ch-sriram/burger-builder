@@ -89,3 +89,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 2. Setting-up JS Config for the Form in `<ContactData />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/10c4e62025e610b6fb6259a0caa5311082a3f614)
 3. Creating `<Input />` Components Dynamically, based on the JS Config, inside the `<ContactData />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/dae73e0b18d53a5529df6fe706cf3432098da830)
 4. Adding a Drop Down Component for `<ContactData />` Component inside `<Input />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2a9da1d69c9f242245c14fd6f19ca8d2d7161953)
+5. Handling User Input: [Commit Details]()

@@ -126,22 +126,35 @@ class ContactData extends Component {
     });
   };
 
+  inputChangedHandler = (event, inputIdentifier) => {
+    // we cannot directly access and mutate the state, we have
+    // to always copy the required state, mutate the copy, and
+    // then use setState() to set the state to the new state.
+
+    const orderForm = { ...this.state.orderForm }; // does not create a deep copy of the nested objects => we need to create a deep clone manually
+    const formElementCopy = { ...orderForm[inputIdentifier] }; // deep copy of the first nested object
+    formElementCopy.value = event.target.value;
+    orderForm[inputIdentifier] = formElementCopy;
+    this.setState({ orderForm });
+  }
+
   render() {
     const formElementsArray = [];
-    for (let key in this.state.orderForm) {
+    for (let key in this.state.orderForm)
       formElementsArray.push({
         id: key, 
         config: this.state.orderForm[key]
-      })
-    }
+      });
+
     let form = (
       <form>
-        {formElementsArray.map(formElement => (
+        {formElementsArray.map((formElement) => (
           <Input
             key={formElement.id}
             elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
             value={formElement.config.value}
+            changed={(event) => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
         <Button type="success" onClick={this.orderHandler}>
