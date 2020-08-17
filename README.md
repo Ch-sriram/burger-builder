@@ -81,3 +81,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 8. Adding a `<Order />` Component inside `<Orders />` Container (Page): [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/a8ecf21d53600cc3fe33ef92d100eeb651acf2c2)
 9. Implementing Navigation Links using `<NavLink />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/cd28720d9650cea831ca4c4975dfeb9c09160d8f)
 10. Fetching Orders from the **[Firebase Backend](https://burger-builder-ram.firebaseio.com/orders.json)**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c0a5f197c56fc2b146f59d9d3fe8bc83e5361900)
+11. Outputting the Orders: [Commit Details]()
