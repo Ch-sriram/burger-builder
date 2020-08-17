@@ -89,23 +89,21 @@ class ContactData extends Component {
     loading: false,
   };
 
-  orderHandler = (event) => {
-    event.preventDefault(); // prevents the default action of a form, which is requesting the data from a server using the GET method.
+  orderHandler = event => {
+    event.preventDefault(); // prevents GET request
     console.log(this.props.ingredients);
+
     this.setState({ loading: true }, () => {
+      const formData = {};
+      for (let formElementIdentifier in this.state.orderForm)
+        formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
+      
+      console.log(formData);
+      
       const order = {
         ingredients: this.props.ingredients,
         price: this.props.totalPrice,
-        customer: {
-          name: "Ch. Sriram",
-          address: {
-            street: "Crazy Street",
-            zipCode: "51251",
-            country: "Zambia",
-          },
-          email: "test@crazy.com",
-          deliveryMethod: "fastest",
-        },
+        orderData: formData,
       };
 
       axios
@@ -127,11 +125,7 @@ class ContactData extends Component {
   };
 
   inputChangedHandler = (event, inputIdentifier) => {
-    // we cannot directly access and mutate the state, we have
-    // to always copy the required state, mutate the copy, and
-    // then use setState() to set the state to the new state.
-
-    const orderForm = { ...this.state.orderForm }; // does not create a deep copy of the nested objects => we need to create a deep clone manually
+    const orderForm = { ...this.state.orderForm }; // deep copy of orderForm => shallow copy of its nested objects
     const formElementCopy = { ...orderForm[inputIdentifier] }; // deep copy of the first nested object
     formElementCopy.value = event.target.value;
     orderForm[inputIdentifier] = formElementCopy;
@@ -147,7 +141,7 @@ class ContactData extends Component {
       });
 
     let form = (
-      <form>
+      <form onSubmit={this.orderHandler}>
         {formElementsArray.map((formElement) => (
           <Input
             key={formElement.id}
@@ -157,7 +151,7 @@ class ContactData extends Component {
             changed={(event) => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
-        <Button type="success" onClick={this.orderHandler}>
+        <Button type="success">
           ORDER
         </Button>
       </form>
