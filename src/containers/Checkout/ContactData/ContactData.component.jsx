@@ -22,6 +22,16 @@ const FormDiv = styled.div`
   @media (min-width: 600px) { width: 500px; }
 `;
 
+/**
+ * In React, we don't have any built-in validation construct, 
+ * in react, we can use a 3rd party application, or apply 
+ * the concepts of validation on our own.
+ * 
+ * Whenever we change the value inside the respective input
+ * field, we'll also have to check whether the input is valid
+ * or not.
+ */
+
 class ContactData extends Component {
   // Each field in the form is to be given a configuration
   // wrt to its respective HTML Element (Tag) Type, and then,
@@ -36,6 +46,8 @@ class ContactData extends Component {
           placeholder: "Your Name",
         },
         value: "",
+        validation: { required: true, },
+        valid: false,
       },
       street: {
         elementType: "input", // type of the HTML tag used
@@ -45,6 +57,8 @@ class ContactData extends Component {
           placeholder: "Street",
         },
         value: "",
+        validation: { required: true, },
+        valid: false,
       },
       zipCode: {
         elementType: "input", // type of the HTML tag used
@@ -54,6 +68,12 @@ class ContactData extends Component {
           placeholder: "ZIP Code",
         },
         value: "",
+        validation: {
+          required: true,
+          minLength: 5,
+          maxLength: 6
+        },
+        valid: false,
       },
       country: {
         elementType: "input", // type of the HTML tag used
@@ -63,6 +83,8 @@ class ContactData extends Component {
           placeholder: "Country",
         },
         value: "",
+        validation: { required: true, },
+        valid: false,
       },
       email: {
         elementType: "input", // type of the HTML tag used
@@ -72,6 +94,8 @@ class ContactData extends Component {
           placeholder: "Your E-Mail",
         },
         value: "",
+        validation: { required: true, },
+        valid: false,
       },
       deliveryMethod: {
         elementType: "select", // type of the HTML tag used
@@ -81,7 +105,7 @@ class ContactData extends Component {
             { value: "fastest", displayValue: "Fastest" },
             { value: "fast", displayValue: "Fast" },
             { value: "standard", displayValue: "Standard" },
-          ]
+          ],
         },
         value: "",
       },
@@ -96,10 +120,12 @@ class ContactData extends Component {
     this.setState({ loading: true }, () => {
       const formData = {};
       for (let formElementIdentifier in this.state.orderForm)
-        formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
-      
+        formData[formElementIdentifier] = this.state.orderForm[
+          formElementIdentifier
+        ].value;
+
       console.log(formData);
-      
+
       const order = {
         ingredients: this.props.ingredients,
         price: this.props.totalPrice,
@@ -108,14 +134,14 @@ class ContactData extends Component {
 
       axios
         .post("/orders.json", order)
-        .then((response) => {
+        .then(response => {
           this.setState({ loading: false }, () => {
             this.props.history.push("/");
             console.log(response);
             return response;
           });
         })
-        .catch((error) => {
+        .catch(error => {
           this.setState({ loading: false }, () => {
             console.log(error);
             return error;
@@ -128,16 +154,42 @@ class ContactData extends Component {
     const orderForm = { ...this.state.orderForm }; // deep copy of orderForm => shallow copy of its nested objects
     const formElementCopy = { ...orderForm[inputIdentifier] }; // deep copy of the first nested object
     formElementCopy.value = event.target.value;
+    orderForm.valid = this.checkValidity(formElementCopy.value, formElementCopy.validation);
+    console.log(orderForm);
     orderForm[inputIdentifier] = formElementCopy;
     this.setState({ orderForm });
+  };
+
+  checkValidity = (value, rules) => {
+    let isValid = false;  // initiation
+
+    // RULE 01
+    isValid = rules.required ? value.trim() !== "" : isValid;
+
+    // RULE 02
+    isValid = rules.minLength ? value.length >= rules.minLength : isValid;
+
+    // RULE 03
+    isValid = rules.maxLength ? value.length <= rules.maxLength : isValid;
+    
+    // RULE 04, RULE 05 and so on..., as many as we want
+    
+    // There's a fundamental flaw in the way we are checking
+    // for whether the particular input element is valid or not
+    // We check 1 rule at once, and we only need the last rule 
+    // to tell whether or not the entire input is valid/
+    // invalid. And so, the flaw is, we're checking the rules,
+    // one after another.
+
+    return isValid;
   }
 
   render() {
     const formElementsArray = [];
     for (let key in this.state.orderForm)
       formElementsArray.push({
-        id: key, 
-        config: this.state.orderForm[key]
+        id: key,
+        config: this.state.orderForm[key],
       });
 
     let form = (
@@ -151,9 +203,7 @@ class ContactData extends Component {
             changed={(event) => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
-        <Button type="success">
-          ORDER
-        </Button>
+        <Button type="success">ORDER</Button>
       </form>
     );
 
