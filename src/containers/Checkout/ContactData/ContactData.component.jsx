@@ -160,27 +160,16 @@ class ContactData extends Component {
     this.setState({ orderForm });
   };
 
+  // RIGHT WAY FOR VALIDATION
   checkValidity = (value, rules) => {
-    let isValid = false;  // initiation
-
-    // RULE 01
-    isValid = rules.required ? value.trim() !== "" : isValid;
-
-    // RULE 02
-    isValid = rules.minLength ? value.length >= rules.minLength : isValid;
-
-    // RULE 03
-    isValid = rules.maxLength ? value.length <= rules.maxLength : isValid;
-    
-    // RULE 04, RULE 05 and so on..., as many as we want
-    
-    // There's a fundamental flaw in the way we are checking
-    // for whether the particular input element is valid or not
-    // We check 1 rule at once, and we only need the last rule 
-    // to tell whether or not the entire input is valid/
-    // invalid. And so, the flaw is, we're checking the rules,
-    // one after another.
-
+    let isValid = true;
+    // If we assume that the input is already valid, we would
+    // if even for once the input gets falsified, it would
+    // be falsified for the rest of the rule checks, because
+    // of the interpolation check we are making as shown below.
+    isValid = rules.required ? value.trim() !== "" && isValid : isValid;
+    isValid = rules.minLength ? value.length >= rules.minLength && isValid : isValid;
+    isValid = rules.maxLength ? value.length <= rules.maxLength && isValid : isValid;
     return isValid;
   }
 
