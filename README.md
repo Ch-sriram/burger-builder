@@ -95,4 +95,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 8. Fixing a Common Validation Gotcha using Interpolation: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0be6a86ce1c2a7498664a1e8a08ef97e904f9b2b)
 9. Adding Validation Feedback for UI: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/77c9edaa1b116fb9d032a4505dd8b4ed1933c72b)
 10. Improving Visual Feedback: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2b9a8006c9651cef42188f8648e02708fcf2ff6d)
-11. Handling Overall Form Validity: [Commit Details]()
+11. Handling Overall Form Validity: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2b9a8006c9651cef42188f8648e02708fcf2ff6d)
