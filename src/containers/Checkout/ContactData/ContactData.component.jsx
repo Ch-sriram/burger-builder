@@ -112,7 +112,7 @@ class ContactData extends Component {
             { value: "standard", displayValue: "Standard" },
           ],
         },
-        value: "",
+        value: "fastest",
         validation: {},
         valid: true,
       },
