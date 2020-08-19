@@ -113,6 +113,7 @@ class ContactData extends Component {
           ],
         },
         value: "",
+        validation: {},
         valid: true,
       },
     },
@@ -157,7 +158,7 @@ class ContactData extends Component {
 
   // RIGHT WAY FOR VALIDATION USING INTERPOLATION
   checkValidity = (value, rules) => {
-    let isValid = true;
+    let isValid = true; if (!rules) return true;
     isValid = rules.required ? value.trim() !== "" && isValid : isValid;
     isValid = rules.minLength ? value.length >= rules.minLength && isValid : isValid;
     isValid = rules.maxLength ? value.length <= rules.maxLength && isValid : isValid;
