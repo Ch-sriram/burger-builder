@@ -50,7 +50,7 @@ const Select = styled.select`${commonInputStyle}`;
 
 const input = props => {
   let inputElement = null;
-  let invalid = props.invalid && props.shouldValidate;
+  let invalid = props.invalid && props.shouldValidate && props.touched;
   switch (props.elementType) {
     case 'textarea':
       inputElement = <TextArea {...props.elementConfig} value={props.value} onChange={props.changed} invalid={invalid} />;

@@ -48,6 +48,7 @@ class ContactData extends Component {
         value: "",
         validation: { required: true, },
         valid: false,
+        touched: false,
       },
       street: {
         elementType: "input", // type of the HTML tag used
@@ -59,6 +60,7 @@ class ContactData extends Component {
         value: "",
         validation: { required: true, },
         valid: false,
+        touched: false,
       },
       zipCode: {
         elementType: "input", // type of the HTML tag used
@@ -74,6 +76,7 @@ class ContactData extends Component {
           maxLength: 6
         },
         valid: false,
+        touched: false,
       },
       country: {
         elementType: "input", // type of the HTML tag used
@@ -85,6 +88,7 @@ class ContactData extends Component {
         value: "",
         validation: { required: true, },
         valid: false,
+        touched: false,
       },
       email: {
         elementType: "input", // type of the HTML tag used
@@ -96,6 +100,7 @@ class ContactData extends Component {
         value: "",
         validation: { required: true, },
         valid: false,
+        touched: false,
       },
       deliveryMethod: {
         elementType: "select", // type of the HTML tag used
@@ -162,7 +167,7 @@ class ContactData extends Component {
     const formElementCopy = { ...orderForm[inputIdentifier] }; // deep copy of the first nested object
     formElementCopy.value = event.target.value;
     formElementCopy.valid = this.checkValidity(formElementCopy.value, formElementCopy.validation);
-    console.log(orderForm);
+    formElementCopy.touched = true;
     orderForm[inputIdentifier] = formElementCopy;
     this.setState({ orderForm });
   };
@@ -185,6 +190,7 @@ class ContactData extends Component {
             value={formElement.config.value}
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
+            touched={formElement.config.touched}
             changed={(event) => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
