@@ -97,4 +97,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 10. Improving Visual Feedback: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2b9a8006c9651cef42188f8648e02708fcf2ff6d)
 11. Handling Overall Form Validity: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/a319cb9fda29ac9fb3ef21fe8b656d1c55a3b301)
 12. Fixing an Error Related to Drop Down Component's State in `<ContactData />`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/02c8afe907d185ff72c395de581e5cba259b45fe)
-13. Fixing a Minor Bug: [Commit Details]()
+13. Fixing a Minor Bug: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/881f39f67deca14650953d01767aabcb8c93b8dc)
