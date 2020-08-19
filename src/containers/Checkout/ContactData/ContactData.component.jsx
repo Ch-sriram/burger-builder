@@ -120,9 +120,7 @@ class ContactData extends Component {
     this.setState({ loading: true }, () => {
       const formData = {};
       for (let formElementIdentifier in this.state.orderForm)
-        formData[formElementIdentifier] = this.state.orderForm[
-          formElementIdentifier
-        ].value;
+        formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
 
       console.log(formData);
 
@@ -150,28 +148,24 @@ class ContactData extends Component {
     });
   };
 
-  inputChangedHandler = (event, inputIdentifier) => {
-    const orderForm = { ...this.state.orderForm }; // deep copy of orderForm => shallow copy of its nested objects
-    const formElementCopy = { ...orderForm[inputIdentifier] }; // deep copy of the first nested object
-    formElementCopy.value = event.target.value;
-    orderForm.valid = this.checkValidity(formElementCopy.value, formElementCopy.validation);
-    console.log(orderForm);
-    orderForm[inputIdentifier] = formElementCopy;
-    this.setState({ orderForm });
-  };
-
-  // RIGHT WAY FOR VALIDATION
+  // RIGHT WAY FOR VALIDATION USING INTERPOLATION
   checkValidity = (value, rules) => {
     let isValid = true;
-    // If we assume that the input is already valid, we would
-    // if even for once the input gets falsified, it would
-    // be falsified for the rest of the rule checks, because
-    // of the interpolation check we are making as shown below.
-    isValid = rules.required ? value.trim() !== "" && isValid : isValid;
+    isValid = (rules.required) ? value.trim() !== "" && isValid : isValid;
     isValid = rules.minLength ? value.length >= rules.minLength && isValid : isValid;
     isValid = rules.maxLength ? value.length <= rules.maxLength && isValid : isValid;
     return isValid;
   }
+
+  inputChangedHandler = (event, inputIdentifier) => {
+    const orderForm = { ...this.state.orderForm }; // deep copy of orderForm => shallow copy of its nested objects
+    const formElementCopy = { ...orderForm[inputIdentifier] }; // deep copy of the first nested object
+    formElementCopy.value = event.target.value;
+    formElementCopy.valid = this.checkValidity(formElementCopy.value, formElementCopy.validation);
+    console.log(orderForm);
+    orderForm[inputIdentifier] = formElementCopy;
+    this.setState({ orderForm });
+  };
 
   render() {
     const formElementsArray = [];
@@ -180,7 +174,7 @@ class ContactData extends Component {
         id: key,
         config: this.state.orderForm[key],
       });
-
+    
     let form = (
       <form onSubmit={this.orderHandler}>
         {formElementsArray.map((formElement) => (
@@ -189,6 +183,8 @@ class ContactData extends Component {
             elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
             value={formElement.config.value}
+            invalid={!formElement.config.valid}
+            shouldValidate={formElement.config.validation}
             changed={(event) => this.inputChangedHandler(event, formElement.id)}
           />
         ))}

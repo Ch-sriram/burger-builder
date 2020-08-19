@@ -19,7 +19,6 @@ const commonInputStyle = `
   }
 `;
 
-
 // STYLED COMPONENTS
 const InputDiv = styled.div`
   width: 100%;
@@ -33,15 +32,28 @@ const Label = styled.label`
   margin-bottom: 8px;
 `;
 
-const Input = styled.input`${commonInputStyle}`;
-const TextArea = styled.textarea`${commonInputStyle}`;
+const returnStyledComponent = baseComponent => {
+  return styled(baseComponent)`
+    border: ${props => props.invalid ? '1px solid red' : '1px solid #CCC'};
+    background-color: ${props => props.invalid ? 'salmon' : 'white'};
+    color: ${props => props.invalid ? 'red' : '#111'};
+  `;
+}
+
+const _Input = styled.input`${commonInputStyle}`;
+const Input = returnStyledComponent(_Input);
+
+const _TextArea = styled.textarea`${commonInputStyle}`;
+const TextArea = returnStyledComponent(_TextArea);
+
 const Select = styled.select`${commonInputStyle}`;
 
 const input = props => {
   let inputElement = null;
+  let invalid = props.invalid && props.shouldValidate;
   switch (props.elementType) {
     case 'textarea':
-      inputElement = <TextArea {...props.elementConfig} value={props.value} onChange={props.changed}/>;
+      inputElement = <TextArea {...props.elementConfig} value={props.value} onChange={props.changed} invalid={invalid} />;
       break;
     
     case 'select':
@@ -58,7 +70,7 @@ const input = props => {
       
     case 'input':
     default:
-      inputElement = <Input {...props.elementConfig} value={props.value} onChange={props.changed}/>;
+      inputElement = <Input {...props.elementConfig} value={props.value} onChange={props.changed} invalid={invalid} />;
   }
 
   return (
