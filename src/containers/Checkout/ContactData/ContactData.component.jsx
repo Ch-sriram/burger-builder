@@ -113,8 +113,10 @@ class ContactData extends Component {
           ],
         },
         value: "",
+        valid: true,
       },
     },
+    formIsValid: false,
     loading: false,
   };
 
@@ -156,7 +158,7 @@ class ContactData extends Component {
   // RIGHT WAY FOR VALIDATION USING INTERPOLATION
   checkValidity = (value, rules) => {
     let isValid = true;
-    isValid = (rules.required) ? value.trim() !== "" && isValid : isValid;
+    isValid = rules.required ? value.trim() !== "" && isValid : isValid;
     isValid = rules.minLength ? value.length >= rules.minLength && isValid : isValid;
     isValid = rules.maxLength ? value.length <= rules.maxLength && isValid : isValid;
     return isValid;
@@ -169,7 +171,20 @@ class ContactData extends Component {
     formElementCopy.valid = this.checkValidity(formElementCopy.value, formElementCopy.validation);
     formElementCopy.touched = true;
     orderForm[inputIdentifier] = formElementCopy;
-    this.setState({ orderForm });
+    
+    let formIsValid = true;
+    for (let inputID in orderForm) {
+      // using interpolation
+      // formIsValid = orderForm[inputID].valid && formIsValid;
+
+      // using conditional checking
+      if (!orderForm[inputID].valid) {
+        formIsValid = false;
+        break;
+      }
+    }
+    
+    this.setState({ orderForm, formIsValid });
   };
 
   render() {
@@ -194,7 +209,7 @@ class ContactData extends Component {
             changed={(event) => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
-        <Button type="success">ORDER</Button>
+        <Button type="success" disabled={!this.state.formIsValid}>ORDER</Button>
       </form>
     );
 
