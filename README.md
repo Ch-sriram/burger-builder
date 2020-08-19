@@ -95,5 +95,5 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 8. Fixing a Common Validation Gotcha using Interpolation: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0be6a86ce1c2a7498664a1e8a08ef97e904f9b2b)
 9. Adding Validation Feedback for UI: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/77c9edaa1b116fb9d032a4505dd8b4ed1933c72b)
 10. Improving Visual Feedback: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2b9a8006c9651cef42188f8648e02708fcf2ff6d)
-11. Handling Overall Form Validity: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2b9a8006c9651cef42188f8648e02708fcf2ff6d)
-12. Fixing an Error Related to Drop Down Component's State in `<ContactData >`: [Commit Details]()
+11. Handling Overall Form Validity: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/a319cb9fda29ac9fb3ef21fe8b656d1c55a3b301)
+12. Fixing an Error Related to Drop Down Component's State in `<ContactData >`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/02c8afe907d185ff72c395de581e5cba259b45fe)
