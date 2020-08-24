@@ -102,4 +102,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 ### Adding Redux ♻ To Our Project 🍔🛠
 
 **Dependency Installation: `npm i --save redux react-redux`**
-1. Setting Up Redux **`STORE`**, **`REDUCER`** & **`ACTIONs`**: [Commit Details]()
+1. Setting Up Redux **`STORE`**, **`REDUCER`** & **`ACTIONs`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/49e1e3a8308096450f6fc8268cd7caa33d3b716d)
