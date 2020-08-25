@@ -106,5 +106,5 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 1. Setting Up Redux **`STORE`**, **`REDUCER`** & **`ACTIONs`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/49e1e3a8308096450f6fc8268cd7caa33d3b716d)
 2. Connecting the Redux **`STORE`** to the `<App />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/257c8bc90ad26b59efa9fa0f0020b293544825b3)
 3. Finishing the **`REDUCER`** for Ingredients: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/45a0123a382061ed1c7807bb39dc54c3f514b515)
-4. Connecting the `<BurgerBuilder />` Container to Redux `**STORE**`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3425425c5be98d658f59f98d81296bb3724de573)
-5. Working on the `totalPrice`'s state in Redux STORE: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0ef7caec3d7510c993b90c88205558f1e9cdfccd)
+4. Connecting the `<BurgerBuilder />` Container to Redux **`STORE`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3425425c5be98d658f59f98d81296bb3724de573)
+5. Working on the `totalPrice`'s state in Redux **`STORE`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0ef7caec3d7510c993b90c88205558f1e9cdfccd)
