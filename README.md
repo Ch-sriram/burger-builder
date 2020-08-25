@@ -109,3 +109,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 4. Connecting the `<BurgerBuilder />` Container to Redux **`STORE`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/3425425c5be98d658f59f98d81296bb3724de573)
 5. Working on the `totalPrice`'s state in Redux **`STORE`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0ef7caec3d7510c993b90c88205558f1e9cdfccd)
 6. Updating local UI state `purchasable` with simple logic && maintaining Redux & UI State separately: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/9b458cdc4fb9da2dd3dc06dec36fc7f98a3ab9a6)
+7. Adjusting `<Checkout />` & `<ContactData />` Components: [Commit Details]()

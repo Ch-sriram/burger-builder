@@ -58,28 +58,9 @@ class BurgerBuilder extends Component {
     return sum > 0;
   }
 
-  orderNowHandler = () => {
-    this.setState({ orderNow: true });
-  };
-
-  orderCancelHandler = () => {
-    this.setState({ orderNow: false });
-  };
-
-  orderContinueHandler = () => {
-    console.log(this.props);
-    const queryParams = [];
-    for (let ingKey in this.state.ingredients) {
-      queryParams.push(`${encodeURIComponent(ingKey)}=${encodeURIComponent(this.state.ingredients[ingKey])}`);
-    }
-    queryParams.push(`price=${this.state.totalPrice}`)
-    const queryString = queryParams.join('&');
-    console.log(queryParams);
-    this.props.history.push({
-      pathname: '/checkout',
-      search: `?${queryString}`
-    });
-  };
+  orderNowHandler = () => this.setState({ orderNow: true });
+  orderCancelHandler = () => this.setState({ orderNow: false });
+  orderContinueHandler = () => this.props.history.push('/checkout');
 
   render() {
     const disabledInfo = { ...this.props.ings };

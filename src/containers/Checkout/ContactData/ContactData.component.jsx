@@ -1,7 +1,8 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // CUSTOM COMPONENTS
 import { StyledButton as Button } from '../../../components/UI/Buttons/StyledButton.styled';
@@ -123,7 +124,7 @@ class ContactData extends Component {
 
   orderHandler = event => {
     event.preventDefault(); // prevents GET request
-    console.log(this.props.ingredients);
+    console.log(this.props.ings);
 
     this.setState({ loading: true }, () => {
       const formData = {};
@@ -133,8 +134,8 @@ class ContactData extends Component {
       console.log(formData);
 
       const order = {
-        ingredients: this.props.ingredients,
-        price: this.props.totalPrice,
+        ingredients: this.props.ings,
+        price: this.props.price,
         orderData: formData,
       };
 
@@ -225,4 +226,11 @@ class ContactData extends Component {
   }
 }
 
-export default withRouter(ContactData);
+const mapStateToProps = state => {
+  return {
+    ings: state.ingredients,
+    price: state.totalPrice,
+  }
+}
+
+export default connect(mapStateToProps)(ContactData);
