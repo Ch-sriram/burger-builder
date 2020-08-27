@@ -121,4 +121,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 4. Setting Up **[`redux-thunk`](https://github.com/reduxjs/redux-thunk#installation)** & **[`Redux DevTools`](https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup)** to Execute Asynchronous Code: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/91ed3a4478ac6b568f09beb98c1a60d6acde97ce)
 5. Fetching `ingredients` Asynchronously from the **[Firebase-Backend](https://burger-builder-ram.firebaseio.com/ingredients.json)**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/bca5060d328da1dfa7fd6b65eb5c9c2da0768a3f)
 6. Initializing `ingredients` in the `<BurgerBuilder />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c53894fff653877d267a8980e8ec466c926f36bd)
-7. Changing the Order of our `ingredients` Manually: [Commit Details]()
+7. Changing the Order of our `ingredients` Manually: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/88607a0746a07e9c5021f56d7b8126d7487cd239)
