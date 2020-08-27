@@ -12,7 +12,7 @@ import Wrapper from '../../components/UI/Wrapper/Wrapper.component';
 import Spinner from '../../components/UI/Spinner/Spinner.component';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler.closureHOC';
 import axios from "../../axios-orders";
-import * as actionTypes from "../../store/actions/actionTypes";
+import * as burgerBuilderActions from "../../store/actions/index"; // we can also omit the [index] from the path, webpack will automatically pick the default file in a directory as [index.js]
 
 class BurgerBuilder extends Component {
   state = {
@@ -120,8 +120,8 @@ const mapStateToProps = state => {
 // REDUX ACTIONs & Dispatch Calls
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: ingredientName => dispatch({ type: actionTypes.ADD_INGREDIENT, ingredientName }),
-    onIngredientRemoved: ingredientName => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName }),
+    onIngredientAdded: ingredientName => dispatch(burgerBuilderActions.addIngredient(ingredientName)),
+    onIngredientRemoved: ingredientName => dispatch(burgerBuilderActions.removeIngredient(ingredientName)),
   }
 };
 
