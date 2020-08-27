@@ -28,6 +28,23 @@ class BurgerBuilder extends Component {
    * NOTE: we have to append `.json` at the end of the API
    * endpoint in case of firebase db.
    */
+
+  /**
+   * In componentDidMount(), we are fetching some data from 
+   * the backend asynchronously, and so, we can fetch data
+   * in 2 ways.
+   *  > Way #1: Fetch data asynchronously at the component
+   *            level and then use an ACTION to REDUCE the
+   *            fetched data to the Redux STORE, thereby, 
+   *            handling the asynchronous code inside the 
+   *            component.
+   *  > Way #2: Fetch data asynchronously using redux-thunk
+   *            inside the respective ACTION CREATORS for the
+   *            respective ACTIONS we have Dispatched here.
+   * 
+   * For now, we'll use Way #2, to understand how Async Code 
+   * can be handled using `redux-thunk`.
+   */
   // componentDidMount() {
   //   axios.get("https://burger-builder-ram.firebaseio.com/ingredients.json")
   //     .then(response => {
