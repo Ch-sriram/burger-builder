@@ -35,7 +35,7 @@ export const fetchIngredientsFailed = () => {
  * NOTE: we have to append `.json` at the end of the API
  * endpoint in case of firebase db.
  */
-export const initIngredients = () => {
+export const initIngredientsAsync = () => {
   return dispatch => {
     axios
       .get("https://burger-builder-ram.firebaseio.com/ingredients.json")

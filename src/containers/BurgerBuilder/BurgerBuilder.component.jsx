@@ -36,7 +36,7 @@ class BurgerBuilder extends Component {
    * can be handled using `redux-thunk`.
    */
   componentDidMount() {
-    
+    this.props.onInitIngredients();
   }
 
   updatePurchasableState() {
@@ -58,7 +58,7 @@ class BurgerBuilder extends Component {
     }
 
     let orderSummary = null,
-        burger = this.state.error ? <p style={{textAlign: 'center'}}>Ingredients can't be loaded!</p> : <Spinner />;
+        burger = this.props.error ? <p style={{textAlign: 'center'}}>Ingredients can't be loaded!</p> : <Spinner />;
 
     if (this.props.ings) {
       burger = (
@@ -103,6 +103,7 @@ const mapStateToProps = state => {
   return {
     ings: state.ingredients,
     price: state.totalPrice,
+    error: state.error,
   }
 };
 
@@ -111,6 +112,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onIngredientAdded: ingredientName => dispatch(burgerBuilderActions.addIngredient(ingredientName)),
     onIngredientRemoved: ingredientName => dispatch(burgerBuilderActions.removeIngredient(ingredientName)),
+    onInitIngredients: () => dispatch(burgerBuilderActions.initIngredientsAsync()),
   }
 };
 
