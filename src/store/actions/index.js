@@ -4,4 +4,4 @@ export {
   initIngredientsAsync,
 } from "./burgerBuilder";
 
-export { } from "./orders";
+export { } from "./order";
