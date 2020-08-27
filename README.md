@@ -124,4 +124,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 7. Changing the Order of our `ingredients` Manually: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/88607a0746a07e9c5021f56d7b8126d7487cd239)
 8. Adding **`ACTIONS`** for Orders: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/ed60d4643fe02ef0684b9d1ec9271645e01b9da0)
 9. Connecting `<ContactData />` Container & Order ACTIONS: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/61c94b912042d3ecad8d8c80d48f45eb5c0da798)
-10. The Order **`REDUCER`**: [Commit Details]()
+10. The Order **`REDUCER`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c96dbb6ba4f585e6bb6bfd895b1979d4cba912ae)
