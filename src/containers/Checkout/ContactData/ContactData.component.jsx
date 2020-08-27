@@ -9,6 +9,8 @@ import { StyledButton as Button } from '../../../components/UI/Buttons/StyledBut
 import Spinner from '../../../components/UI/Spinner/Spinner.component';
 import axios from '../../../axios-orders';
 import Input from '../../../components/UI/Input/Input.component';
+import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler.closureHOC";
+import * as actions from "../../../store/actions/index";
 
 // STYLED COMPONENTS
 const FormDiv = styled.div`
@@ -139,21 +141,23 @@ class ContactData extends Component {
         orderData: formData,
       };
 
-      axios
-        .post("/orders.json", order)
-        .then(response => {
-          this.setState({ loading: false }, () => {
-            this.props.history.push("/");
-            console.log(response);
-            return response;
-          });
-        })
-        .catch(error => {
-          this.setState({ loading: false }, () => {
-            console.log(error);
-            return error;
-          });
-        });
+      this.props.onOrderBurger(order);
+
+      // axios
+      //   .post("/orders.json", order)
+      //   .then(response => {
+      //     this.setState({ loading: false }, () => {
+      //       this.props.history.push("/");
+      //       console.log(response);
+      //       return response;
+      //     });
+      //   })
+      //   .catch(error => {
+      //     this.setState({ loading: false }, () => {
+      //       console.log(error);
+      //       return error;
+      //     });
+      //   });
     });
   };
 
@@ -233,4 +237,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(ContactData);
+const mapDispatchToProps = dispatch => {
+  return {
+    onOrderBurger: orderDetails => dispatch(actions.purchaseBurgerStartAsync(orderDetails)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(ContactData, axios));
