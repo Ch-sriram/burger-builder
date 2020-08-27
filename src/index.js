@@ -7,9 +7,9 @@ import { createStore } from 'redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducer from './store/reducer';
+import burgerBuilderReducer from './store/reducers/burgerBuilder';
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(burgerBuilderReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 // NOTE: The <Provider /> should wrap all components to be rendered on the DOM.
 const app = (

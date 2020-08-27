@@ -114,3 +114,4 @@ Firebase Common API Endpoint: <https://burger-builder-ram.firebaseio.com/>
 ### Adding ⚡ Advanced Redux ♻ To Our Project 🍔🛠
 
 1. Installing the **[Redux Devtools](https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store)**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/90a76bab3dc28ae461c7229419f5c3ff49ec8c27)
+2. Preparing the Folder Structure to use **`ACTION CREATORS`**: [Commit Details]()
