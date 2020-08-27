@@ -119,3 +119,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 2. Preparing the Folder Structure to use **`ACTION CREATORS`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/dc431d4c3cf4b3151498a2457e9fd2a5d075bca3)
 3. Creating **`ACTION CREATORS`** for `<BurgerBuilder />` Component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/77ee57ca9edb8bfe4462daba114f537c31bde8a2)
 4. Setting Up **[`redux-thunk`](https://github.com/reduxjs/redux-thunk#installation)** & **[`Redux DevTools`](https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup)** to Execute Asynchronous Code: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/91ed3a4478ac6b568f09beb98c1a60d6acde97ce)
+5. Fetching `ingredients` Asynchronously from the **[Firebase-Backend](https://burger-builder-ram.firebaseio.com/ingredients.json)**: [Commit Details]()

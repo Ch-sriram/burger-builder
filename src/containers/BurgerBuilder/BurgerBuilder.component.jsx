@@ -17,17 +17,7 @@ import * as burgerBuilderActions from "../../store/actions/index"; // we can als
 class BurgerBuilder extends Component {
   state = {
     orderNow: false,
-    loading: false,
-    error: false,
   };
-
-  /**
-   * Fetch the default ingredients data from the DB here:
-   *  https://burger-builder-ram.firebaseio.com/ingredients
-   * 
-   * NOTE: we have to append `.json` at the end of the API
-   * endpoint in case of firebase db.
-   */
 
   /**
    * In componentDidMount(), we are fetching some data from 
@@ -45,27 +35,9 @@ class BurgerBuilder extends Component {
    * For now, we'll use Way #2, to understand how Async Code 
    * can be handled using `redux-thunk`.
    */
-  // componentDidMount() {
-  //   axios.get("https://burger-builder-ram.firebaseio.com/ingredients.json")
-  //     .then(response => {
-  //       this.setState({ ingredients: response.data },
-  //         () => {
-  //           const purchasableInfo = { ...this.state.ingredients };
-  //           for (let key in purchasableInfo) {
-  //             if (this.state.purchasable) {
-  //               break;
-  //             }
-  //             if (purchasableInfo[key] > 0) {
-  //               this.setState({ purchasable: true });
-  //             }
-  //           }
-  //         });
-  //     })
-  //     .catch(error => {
-  //       this.setState({ error: true }, () => console.log(error));
-  //       return error;
-  //     });
-  // }
+  componentDidMount() {
+    
+  }
 
   updatePurchasableState() {
     const ingredients = { ...this.props.ings };
@@ -113,7 +85,7 @@ class BurgerBuilder extends Component {
       );
     }
 
-    orderSummary = this.state.loading ? <Spinner /> : orderSummary;
+    // orderSummary = this.state.loading ? <Spinner /> : orderSummary;
 
     return (
       <Aux>
