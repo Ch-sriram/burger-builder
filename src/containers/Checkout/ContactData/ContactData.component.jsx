@@ -121,44 +121,44 @@ class ContactData extends Component {
       },
     },
     formIsValid: false,
-    loading: false,
   };
 
   orderHandler = event => {
     event.preventDefault(); // prevents GET request
     console.log(this.props.ings);
 
-    this.setState({ loading: true }, () => {
-      const formData = {};
-      for (let formElementIdentifier in this.state.orderForm)
-        formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
+    const formData = {};
+    for (let formElementIdentifier in this.state.orderForm)
+      formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
 
-      console.log(formData);
+    console.log(formData);
 
-      const order = {
-        ingredients: this.props.ings,
-        price: this.props.price,
-        orderData: formData,
-      };
+    const order = {
+      ingredients: this.props.ings,
+      price: this.props.price,
+      orderData: formData,
+    };
 
-      this.props.onOrderBurger(order);
+    this.props.onOrderBurger(order);
 
-      // axios
-      //   .post("/orders.json", order)
-      //   .then(response => {
-      //     this.setState({ loading: false }, () => {
-      //       this.props.history.push("/");
-      //       console.log(response);
-      //       return response;
-      //     });
-      //   })
-      //   .catch(error => {
-      //     this.setState({ loading: false }, () => {
-      //       console.log(error);
-      //       return error;
-      //     });
-      //   });
-    });
+    // this.setState({ loading: true }, () => {
+
+    //   axios
+    //     .post("/orders.json", order)
+    //     .then(response => {
+    //       this.setState({ loading: false }, () => {
+    //         this.props.history.push("/");
+    //         console.log(response);
+    //         return response;
+    //       });
+    //     })
+    //     .catch(error => {
+    //       this.setState({ loading: false }, () => {
+    //         console.log(error);
+    //         return error;
+    //       });
+    //     });
+    // });
   };
 
   // RIGHT WAY FOR VALIDATION USING INTERPOLATION
@@ -219,7 +219,7 @@ class ContactData extends Component {
       </form>
     );
 
-    form = this.state.loading ? <Spinner /> : form;
+    form = this.props.loading ? <Spinner /> : form;
 
     return (
       <FormDiv>
@@ -234,12 +234,13 @@ const mapStateToProps = state => {
   return {
     ings: state.ingredients,
     price: state.totalPrice,
-  }
+    loading: state.loading,
+  };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onOrderBurger: orderDetails => dispatch(actions.purchaseBurgerStartAsync(orderDetails)),
+    onOrderBurger: orderDetails => dispatch(actions.purchaseBurgerAsync(orderDetails)),
   };
 }
 
