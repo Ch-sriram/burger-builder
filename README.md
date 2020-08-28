@@ -129,4 +129,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 12. Redirect in `<ContactData />` to Improve UX: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/e114f5c158cd8a4383d643137b1b91e48471ccf7)
 13. Combining **`REDUCERS`** in **`[./store/reducers/order.js]`** & **`[./store/reducers/burgerBuilder.js]`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/f521ec42f175146b165091e670d92f187534f0e7)
 14. Handling Purchases & Updating the UI: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c42f5f9d6b1cc7c7d948028e34bd21f64eecd8c6)
-15. Resetting the `totalPrice` after Purchases: [Commit Details]()
+15. Resetting the `totalPrice` after Purchases: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/ddc8161cff3e022fa088e0f5cc42b2b06ea6caa4)
