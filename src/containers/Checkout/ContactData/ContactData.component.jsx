@@ -140,25 +140,6 @@ class ContactData extends Component {
     };
 
     this.props.onOrderBurger(order);
-
-    // this.setState({ loading: true }, () => {
-
-    //   axios
-    //     .post("/orders.json", order)
-    //     .then(response => {
-    //       this.setState({ loading: false }, () => {
-    //         this.props.history.push("/");
-    //         console.log(response);
-    //         return response;
-    //       });
-    //     })
-    //     .catch(error => {
-    //       this.setState({ loading: false }, () => {
-    //         console.log(error);
-    //         return error;
-    //       });
-    //     });
-    // });
   };
 
   // RIGHT WAY FOR VALIDATION USING INTERPOLATION
@@ -232,9 +213,9 @@ class ContactData extends Component {
 
 const mapStateToProps = state => {
   return {
-    ings: state.ingredients,
-    price: state.totalPrice,
-    loading: state.loading,
+    ings: state.burgerBuilder.ingredients,
+    price: state.burgerBuilder.totalPrice,
+    loading: state.order.loading,
   };
 }
 

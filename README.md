@@ -127,3 +127,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 10. The Order **`REDUCER`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c96dbb6ba4f585e6bb6bfd895b1979d4cba912ae)
 11. Working on Order **`ACTIONS`**: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/d24c2cc486b23d0bc3d4d481c5451df39a48aa41)
 12. Redirect in `<ContactData />` to Improve UX: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/e114f5c158cd8a4383d643137b1b91e48471ccf7)
+13. Combining REDUCERS in **`\[./store/reducers/order.js\]`** & **`\[./store/reducers/burgerBuilder.js\]`**: [Commit Details]()
