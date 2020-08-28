@@ -12,29 +12,13 @@ import Wrapper from '../../components/UI/Wrapper/Wrapper.component';
 import Spinner from '../../components/UI/Spinner/Spinner.component';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler.closureHOC';
 import axios from "../../axios-orders";
-import * as burgerBuilderActions from "../../store/actions/index"; // we can also omit the [index] from the path, webpack will automatically pick the default file in a directory as [index.js]
+import * as actions from "../../store/actions/index";
 
 class BurgerBuilder extends Component {
   state = {
     orderNow: false,
   };
 
-  /**
-   * In componentDidMount(), we are fetching some data from 
-   * the backend asynchronously, and so, we can fetch data
-   * in 2 ways.
-   *  > Way #1: Fetch data asynchronously at the component
-   *            level and then use an ACTION to REDUCE the
-   *            fetched data to the Redux STORE, thereby, 
-   *            handling the asynchronous code inside the 
-   *            component.
-   *  > Way #2: Fetch data asynchronously using redux-thunk
-   *            inside the respective ACTION CREATORS for the
-   *            respective ACTIONS we have Dispatched here.
-   * 
-   * For now, we'll use Way #2, to understand how Async Code 
-   * can be handled using `redux-thunk`.
-   */
   componentDidMount() {
     this.props.onInitIngredients();
   }
@@ -49,7 +33,11 @@ class BurgerBuilder extends Component {
 
   orderNowHandler = () => this.setState({ orderNow: true });
   orderCancelHandler = () => this.setState({ orderNow: false });
-  orderContinueHandler = () => this.props.history.push('/checkout');
+  
+  orderContinueHandler = () => {
+    this.props.onInitPurchase();
+    this.props.history.push('/checkout')
+  };
 
   render() {
     const disabledInfo = { ...this.props.ings };
@@ -85,8 +73,6 @@ class BurgerBuilder extends Component {
       );
     }
 
-    // orderSummary = this.state.loading ? <Spinner /> : orderSummary;
-
     return (
       <Aux>
         <Modal show={this.state.orderNow} modalClosed={this.orderCancelHandler}>
@@ -110,10 +96,11 @@ const mapStateToProps = state => {
 // REDUX ACTIONs & Dispatch Calls
 const mapDispatchToProps = dispatch => {
   return {
-    onIngredientAdded: ingredientName => dispatch(burgerBuilderActions.addIngredient(ingredientName)),
-    onIngredientRemoved: ingredientName => dispatch(burgerBuilderActions.removeIngredient(ingredientName)),
-    onInitIngredients: () => dispatch(burgerBuilderActions.initIngredientsAsync()),
-  }
+    onIngredientAdded: ingredientName => dispatch(actions.addIngredient(ingredientName)),
+    onIngredientRemoved: ingredientName => dispatch(actions.removeIngredient(ingredientName)),
+    onInitIngredients: () => dispatch(actions.initIngredientsAsync()),
+    onInitPurchase: () => dispatch(actions.purchaseInit()),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));
