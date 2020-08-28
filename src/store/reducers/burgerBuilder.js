@@ -36,6 +36,10 @@ const reducer = (state = initialState, action) => {
       };
     
     case actionTypes.SET_INGREDIENTS:
+      let price = initialState.totalPrice;
+      for (let ingredient of Object.entries(action.ingredients)) {
+        price += INGREDIENT_PRICES[ingredient[0]] * ingredient[1];
+      }
       return {
         ...state,
         ingredients: {
@@ -44,6 +48,7 @@ const reducer = (state = initialState, action) => {
           cheese: action.ingredients.cheese,
           meat: action.ingredients.meat,
         },
+        totalPrice: price,
         error: false,
       }
     
