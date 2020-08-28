@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // CUSTOM COMPONENTS
@@ -31,20 +31,31 @@ class Checkout extends Component {
   checkoutContinuedHandler = () => {
     this.props.history.replace('/checkout/contact-data');
   }
+
+  /**
+   * Whenever we try to access the "/checkout" route before
+   * building the Burger at "/" route, we would always get an
+   * error because the `ingredients` aren't loaded yet from the
+   * firebase backend. And so, we will make sure that we only
+   * show a Loading Spinner until ingredients are loaded, 
+   * otherwise we show the <CheckoutSummary /> Component below.
+   */
   
   render() {
-    return (
-      <div>
-        <CheckoutSummary
-          ingredients={this.props.ings}
-          checkoutCancelled={this.checkoutCancelledHandler}
-          checkoutContinued={this.checkoutContinuedHandler}
-        />
-        <Route
-          path={`${this.props.match.url}/contact-data`}
-          component={ContactData} />
-      </div>
-    );
+    let summary = !this.props.ings ? <Redirect to="/" />
+      : (
+        <div>
+          <CheckoutSummary
+            ingredients={this.props.ings}
+            checkoutCancelled={this.checkoutCancelledHandler}
+            checkoutContinued={this.checkoutContinuedHandler}
+          />
+          <Route
+            path={`${this.props.match.url}/contact-data`}
+            component={ContactData} />
+        </div>
+      );
+    return summary;
   }
 }
 
