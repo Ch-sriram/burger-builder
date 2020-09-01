@@ -131,3 +131,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 14. Handling Purchases & Updating the UI: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c42f5f9d6b1cc7c7d948028e34bd21f64eecd8c6)
 15. Resetting the `totalPrice` after Purchases: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/ddc8161cff3e022fa088e0f5cc42b2b06ea6caa4)
 16. Fetching Orders via Redux & Refactoring the **`REDUCERS`** using Custom Utility Function(s): [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/e39ea9c1d7c92ca92cc3639ac6be175c904e87c8)
+17. Making a Leaner Switch Case by Refactoring Code in **`REDUCERS`**: [Commit Details]()
