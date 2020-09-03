@@ -136,4 +136,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 ### Adding Authentication 🔐 to the 🍔🛠 Project
 
 1. Adding an `<Auth />` Container Form: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/48acdef930355784a90ba1487187663e2055a487)
-2. Adding **`ACTION Creators`** for the Auth Form: [Commit Details]()
+2. Adding **`ACTION Creators`** for the Auth Form: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0a75199f9f50f0ba10fa05489739b6541152f27c)
