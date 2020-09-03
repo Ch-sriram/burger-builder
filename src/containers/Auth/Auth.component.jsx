@@ -1,10 +1,12 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // CUSTOM COMPONENT IMPORTS
 import Input from "../../components/UI/Input/Input.component";
 import { StyledButton as Button } from "../../components/UI/Buttons/StyledButton.styled";
 import { FormDiv } from "../../components/UI/Form/FormDiv.styled";
+import * as actions from "../../store/actions/index";
 
 class Auth extends Component {
   state = {
@@ -63,6 +65,11 @@ class Auth extends Component {
     this.setState({ controls });
   };
 
+  submitHandler = event => {
+    event.preventDefault();
+    this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value);
+  };
+
   render() {
     const formElementsArray = [];
     for (let key in this.state.controls)
@@ -86,7 +93,7 @@ class Auth extends Component {
     
     return (
       <FormDiv>
-        <form>
+        <form onSubmit={this.submitHandler}>
           {form}
           <Button type="success">SUBMIT</Button>
         </form>
@@ -95,4 +102,8 @@ class Auth extends Component {
   }
 };
 
-export default Auth;
+const mapDispatchToProps = dispatch => ({
+  onAuth: (email, pass) => dispatch(actions.auth(email, pass)),
+});
+
+export default connect(null, mapDispatchToProps)(Auth);
