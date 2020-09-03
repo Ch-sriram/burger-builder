@@ -1,6 +1,5 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
-import styled from 'styled-components';
 // import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -9,21 +8,10 @@ import { StyledButton as Button } from '../../../components/UI/Buttons/StyledBut
 import Spinner from '../../../components/UI/Spinner/Spinner.component';
 import axios from '../../../axios-orders';
 import Input from '../../../components/UI/Input/Input.component';
+import { FormDiv } from '../../../components/UI/Form/FormDiv.styled';
 import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler.closureHOC";
 import * as actions from "../../../store/actions/index";
 
-// STYLED COMPONENTS
-const FormDiv = styled.div`
-  margin: 20px auto;
-  width: 80%;
-  text-align: center;
-  box-shadow: 0 2px 3px #CCC;
-  border: 1px solid #EEE;
-  padding: 10px;
-  box-sizing: border-box;
-  
-  @media (min-width: 600px) { width: 500px; }
-`;
 
 /**
  * In React, we don't have any built-in validation construct, 

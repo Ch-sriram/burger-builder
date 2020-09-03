@@ -11,7 +11,7 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle.component';
 const Toolbar = styled.header`
   height: 56px;
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   background-color: #703B09;
@@ -21,6 +21,7 @@ const Toolbar = styled.header`
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 90;
+  margin-bottom: -5px;
 
   & nav {
     height: 100%;

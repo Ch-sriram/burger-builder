@@ -28,7 +28,7 @@ class Orders extends Component {
         )
       );
     return (
-      <div style={{ marginTop: '72px' }}>
+      <div>
         {ordersList}
       </div>
     );
