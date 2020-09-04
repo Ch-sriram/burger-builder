@@ -1,7 +1,7 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 // CUSTOM COMPONENTS
 import Aux from '../../hoc/Auxiliary/Auxiliary.hoc';
@@ -48,7 +48,7 @@ class Layout extends Component {
       </Aux>
     );
   }
-}
+};
 
 const mapStateToProps = state => ({ isAuth: state.auth.token !== null });
 

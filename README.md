@@ -145,3 +145,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 8. Accessing Protected Resources by Setting Up Rules in Firebase 🔥: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/5e141b593ed1b4c468ee16d17ed9d046d85eb8fd)
 9. Updating the UI Depending on `auth` State: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2846f3a2c4d6f875b0ed040a74b9c7693f660cb0)
 10. Adding a Logout Link: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0a912cd59813270b92fb5a9bd6b89f5a71e16d19)
+11. Forwarding Unauthenticated Users: [Commit Details]()

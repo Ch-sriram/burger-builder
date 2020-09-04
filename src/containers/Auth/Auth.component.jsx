@@ -1,6 +1,7 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 // CUSTOM COMPONENT IMPORTS
 import Input from "../../components/UI/Input/Input.component";
@@ -97,12 +98,14 @@ class Auth extends Component {
       )) : <Spinner />;
     
     const errorMessage = this.props.error ? <p style={{'color':'red', 'font-weight': '600'}}>Invalid E-Mail or Password</p> : null;
+    const authRedirect = this.props.isAuth ? <Redirect to="/" /> : null; 
 
     return (
       <FormDiv>
         <form onSubmit={this.submitHandler}>
+          {authRedirect}  
           {errorMessage}
-          <h3>{this.state.isSignUp ? "Sign Up" : "Sign In"}</h3>
+          <h3>{this.state.isSignUp ? "Signup" : "Login"}</h3>
           {form}
           <Button type="success">SUBMIT</Button>
         </form>
@@ -110,7 +113,7 @@ class Auth extends Component {
           type="danger"
           onClick={this.switchAuthModeHandler}
           style={{'textDecoration':'underline'}}>
-          {this.state.isSignUp ? "Existing User? Sign In" : "New User? Please Sign Up"}
+          {this.state.isSignUp ? "Existing User: Login" : "New User: Signup"}
         </Button>
       </FormDiv>
     );
@@ -120,6 +123,7 @@ class Auth extends Component {
 const mapStateToProps = state => ({
   loading: state.auth.loading,
   error: state.auth.error,
+  isAuth: state.auth.token !== null,
 });
 
 const mapDispatchToProps = dispatch => ({
