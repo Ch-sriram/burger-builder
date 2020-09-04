@@ -140,3 +140,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 3. Getting a Token from the Backend for Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/57771e243efe0719b86938a041656073b30a69d4)
 4. Adding Sign-In for Authorized Users: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2e00bc34c30fe005f6aa303191a4ad7050b613c5)
 5. Storing the Response Token from Sing-In/Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/674882c777eda0514e1432aa4a85ebd1a328ff08)
+6. Adding a `<Spinner />` UI Component for Sign-In & Showing Errors on the View: [Commit Details]()
