@@ -142,3 +142,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 5. Storing the Response Token from Sing-In/Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/674882c777eda0514e1432aa4a85ebd1a328ff08)
 6. Adding a `<Spinner />` UI Component for Sign-In & Showing Errors on the View: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/9e2332b6ecde73b692cdb532e8344d4517b68ac5)
 7. Logging Users Out: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/4dae4c4f481f2727a40da9c9f59f4fd989508fb9)
+8. Accessing Protected Resources by Setting Up Rules in Firebase 🔥: [Commit Details]()

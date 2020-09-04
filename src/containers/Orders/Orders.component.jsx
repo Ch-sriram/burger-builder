@@ -13,7 +13,7 @@ class Orders extends Component {
   state = { orders: [], loading: true, }
 
   componentDidMount() {
-    this.props.onFetchOrders();
+    this.props.onFetchOrders(this.props.token);
   }
 
   render() {
@@ -35,7 +35,7 @@ class Orders extends Component {
   }
 }
 
-const mapStateToProps = state => ({ orders: state.order.orders, loading: state.order.loading, });
-const mapDispatchToProps = dispatch => ({ onFetchOrders: () => dispatch(actions.fetchOrdersAsync()) });
+const mapStateToProps = state => ({ orders: state.order.orders, loading: state.order.loading, token: state.auth.token, });
+const mapDispatchToProps = dispatch => ({ onFetchOrders: token => dispatch(actions.fetchOrdersAsync(token)) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Orders, axios));

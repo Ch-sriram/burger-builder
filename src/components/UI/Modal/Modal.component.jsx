@@ -11,12 +11,12 @@ const StyledModal = styled.div`
   z-index: 500;
   background-color: white;
   width: 70%;
-  height: calc(100vh - 45%);
+  /* height: calc(100vh - 60%); */
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px black;
   padding: 16px;
   left: 15%;
-  top: 30%;
+  top: 15%;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
   overflow-y: auto;

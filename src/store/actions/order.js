@@ -22,11 +22,16 @@ export const purchaseBurgerStart = () => {
   };
 };
 
+// We can get the token from the Redux STORE in 2 ways:
+//  1. Using getState method passed along with dispatch.
+//  2. Passing the token to action creator through React.
+
+// #1: Using getState method passed along with dispatch.
 export const purchaseBurgerAsync = orderData => (
-  dispatch => {
+  (dispatch, getState) => {
     dispatch(purchaseBurgerStart());
     axios
-      .post("/orders.json", orderData)
+      .post(`/orders.json?auth=${getState().auth.token}`, orderData)
       .then(response => {
         console.log(response.data);
         dispatch(purchaseBurgerSuccess(response.data.name, orderData));
@@ -47,10 +52,11 @@ export const fetchOrdersSuccess = orders => ({ type: actionTypes.FETCH_ORDERS_SU
 export const fetchOrdersFail = error => ({ type: actionTypes.FETCH_ORDERS_FAIL, error });
 export const fetchOrdersStart = () => ({ type: actionTypes.FETCH_ORDERS_START, });
 
-export const fetchOrdersAsync = () => dispatch => {
+// #2: Passing the token to fetchOrdersAsync() through React.
+export const fetchOrdersAsync = token => dispatch => {
   dispatch(fetchOrdersStart());
   axios
-    .get("/orders.json")
+    .get(`/orders.json?auth=${token}`)
     .then(res => {
       const fetchedOrders = [];
       for (let key in res.data) {
