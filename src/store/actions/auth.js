@@ -6,10 +6,11 @@ import * as actionTypes from './actionTypes';
 
 export const authStart = () => ({ type: actionTypes.AUTH_START, });
 
-export const authSuccess = authData => {
+export const authSuccess = (idToken, userId) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
-    authData,
+    idToken,
+    userId
   };
 };
 
@@ -40,7 +41,8 @@ export const auth = (email, password, isSignup) => dispatch => {
     .post(url, authData)
     .then((res) => {
       console.log(res);
-      dispatch(authSuccess(res.data));
+      const { idToken, localId } = res.data;
+      dispatch(authSuccess(idToken, localId));
       return res;
     })
     .catch((err) => {
