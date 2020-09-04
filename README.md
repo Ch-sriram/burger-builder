@@ -139,4 +139,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 2. Adding **`ACTION Creators`** for the Auth Form: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0a75199f9f50f0ba10fa05489739b6541152f27c)
 3. Getting a Token from the Backend for Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/57771e243efe0719b86938a041656073b30a69d4)
 4. Adding Sign-In for Authorized Users: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2e00bc34c30fe005f6aa303191a4ad7050b613c5)
-5. Storing the Response Token from Sing-In/Sign-Up: [Commit Details]()
+5. Storing the Response Token from Sing-In/Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/674882c777eda0514e1432aa4a85ebd1a328ff08)
