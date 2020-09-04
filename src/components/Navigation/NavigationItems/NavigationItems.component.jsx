@@ -18,12 +18,15 @@ const NavigationItems = styled.ul`
   @media (min-width: 500px) { flex-flow: row; }
 `;
 
-const navigationItems = () => (
+const navigationItems = props => {
+  console.log(props);
+  return (
   <NavigationItems>
     <NavigationItem link="/" exact>Burger Builder</NavigationItem>
     <NavigationItem link="/orders">Orders</NavigationItem>
-    <NavigationItem link="/auth">Authenticate</NavigationItem>
+    {!props.isAuth ? <NavigationItem link="/auth">Authenticate</NavigationItem>
+                        : <NavigationItem link="/logout">Logout</NavigationItem>}
   </NavigationItems>
-);
+)};
 
 export default navigationItems;

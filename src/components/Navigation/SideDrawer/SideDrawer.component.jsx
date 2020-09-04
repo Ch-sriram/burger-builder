@@ -33,6 +33,7 @@ const LogoDiv = styled.div`
 `;
 
 const sideDrawer = props => {
+  console.log(props);
   const status = props.open ? "open" : "closed";
   return (
     <Aux>
@@ -42,7 +43,7 @@ const sideDrawer = props => {
           <Logo />
         </LogoDiv>
         <nav>
-          <NavigationItems />
+          <NavigationItems isAuth={props.isAuth} />
         </nav>
       </SideDrawer>
     </Aux>
