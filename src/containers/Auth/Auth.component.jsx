@@ -102,14 +102,15 @@ class Auth extends Component {
       <FormDiv>
         <form onSubmit={this.submitHandler}>
           {errorMessage}
-          <h3>{this.state.isSignUp ? "Sign-Up" : "Sign-In"}</h3>
+          <h3>{this.state.isSignUp ? "Sign Up" : "Sign In"}</h3>
           {form}
           <Button type="success">SUBMIT</Button>
         </form>
         <Button
           type="danger"
-          onClick={this.switchAuthModeHandler}>
-          {this.state.isSignUp ? "Existing User? Sign-In" : "New User? Sign-Up"}
+          onClick={this.switchAuthModeHandler}
+          style={{'textDecoration':'underline'}}>
+          {this.state.isSignUp ? "Existing User? Sign In" : "New User? Please Sign Up"}
         </Button>
       </FormDiv>
     );

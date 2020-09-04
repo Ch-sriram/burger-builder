@@ -5,20 +5,14 @@ import axios from 'axios';
 import * as actionTypes from './actionTypes';
 
 export const authStart = () => ({ type: actionTypes.AUTH_START, });
+export const authFail = error => ({ type: actionTypes.AUTH_FAIL, error, });
+export const authSuccess = (idToken, userId) => ({ type: actionTypes.AUTH_SUCCESS, idToken, userId, });
+export const logout = () => ({ type: actionTypes.AUTH_LOGOUT, });
 
-export const authSuccess = (idToken, userId) => {
-  return {
-    type: actionTypes.AUTH_SUCCESS,
-    idToken,
-    userId
-  };
-};
-
-export const authFail = error => {
-  return {
-    type: actionTypes.AUTH_FAIL,
-    error,
-  };
+export const checkAuthTimeout = expirationTime => dispatch => {
+  setTimeout(() => {
+    dispatch(logout());
+  }, expirationTime * 1000); // Default expirationTime is 3600. 3600ms * 1000 = 3600000ms = 3600s = 1hr.
 };
 
 export const auth = (email, password, isSignup) => dispatch => {
@@ -41,9 +35,9 @@ export const auth = (email, password, isSignup) => dispatch => {
     .post(url, authData)
     .then((res) => {
       console.log(res);
-      const { idToken, localId } = res.data;
+      const { idToken, localId, expiresIn } = res.data;
       dispatch(authSuccess(idToken, localId));
-      return res;
+      dispatch(checkAuthTimeout(expiresIn));
     })
     .catch((err) => {
       console.log(err);
