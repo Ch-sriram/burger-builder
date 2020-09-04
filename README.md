@@ -146,4 +146,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 9. Updating the UI Depending on `auth` State: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2846f3a2c4d6f875b0ed040a74b9c7693f660cb0)
 10. Adding a Logout Link: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0a912cd59813270b92fb5a9bd6b89f5a71e16d19)
 11. Forwarding Unauthenticated Users: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/9c7f59c8d90bb35c903253fd537cc92767fdc8d7)
-12. Redirecting the User to the Checkout Page (In case the User is New and has Built a Burger w/o Login/Signup): [Commit Details]()
+12. Redirecting the User to the Checkout Page (In case the User is New and has Built a Burger w/o Login/Signup): [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/35c2a66977084175b1c9bd14b42f5158c56ee736)
