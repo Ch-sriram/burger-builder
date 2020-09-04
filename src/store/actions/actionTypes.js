@@ -20,3 +20,6 @@ export const AUTH_START = "AUTH_START";
 export const AUTH_SUCCESS = "AUTH_SUCCESS";
 export const AUTH_FAIL = "AUTH_FAIL";
 export const AUTH_LOGOUT = "AUTH_LOGOUT";
+
+// ACTION type for Redirection for Signup while building burger
+export const SET_AUTH_REDIRECT_PATH = "SET_AUTH_REDIRECT_PATH";

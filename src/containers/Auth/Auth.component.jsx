@@ -47,6 +47,11 @@ class Auth extends Component {
     isSignUp: true,
   };
 
+  componentDidMount() {
+    if (!this.props.buildingBurger && this.props.authRedirectPath !== "/")
+      this.props.onSetAuthRedirectPath();
+  }
+
   checkValidity = (value, rules) => {
     let isValid = true; if (!rules) return true;
     isValid = rules.required ? value.trim() !== "" && isValid : isValid;
@@ -98,7 +103,7 @@ class Auth extends Component {
       )) : <Spinner />;
     
     const errorMessage = this.props.error ? <p style={{'color':'red', 'font-weight': '600'}}>Invalid E-Mail or Password</p> : null;
-    const authRedirect = this.props.isAuth ? <Redirect to="/" /> : null; 
+    const authRedirect = this.props.isAuth ? <Redirect to={this.props.authRedirectPath} /> : null; 
 
     return (
       <FormDiv>
@@ -124,10 +129,13 @@ const mapStateToProps = state => ({
   loading: state.auth.loading,
   error: state.auth.error,
   isAuth: state.auth.token !== null,
+  buildingBurger: state.burgerBuilder.building,
+  authRedirectPath: state.auth.authRedirectPath,
 });
 
 const mapDispatchToProps = dispatch => ({
   onAuth: (email, pass, isSignup) => dispatch(actions.auth(email, pass, isSignup)),
+  onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath("/")),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);
