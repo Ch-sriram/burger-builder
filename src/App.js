@@ -1,6 +1,6 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // CUSTOM COMPONENTS
@@ -18,24 +18,38 @@ class App extends Component {
   }
 
   render() {
+    const routes = this.props.isAuth ? (
+      <Switch>
+        <Route path="/checkout" component={Checkout} />
+        <Route path="/orders" component={Orders} />
+        <Route path="/logout" component={Logout} />
+        <Route path="/" component={BurgerBuilder} />
+        <Redirect to="/" />
+      </Switch>
+    ): (
+      <Switch>
+        <Route path="/auth" component={Auth} />
+        <Route path="/" component={BurgerBuilder} />
+        <Redirect to="/" />
+      </Switch>
+    );
+
     return (
       <div>
         <Layout>
-          <Switch>
-            <Route path="/checkout" component={Checkout} />
-            <Route path="/orders" component={Orders} />
-            <Route path="/auth" component={Auth} />
-            <Route path="/logout" component={Logout} />
-            <Route path="/" component={BurgerBuilder} />
-          </Switch>
+          {routes}
         </Layout>
       </div>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  isAuth: state.auth.token !== null,
+});
+
 const mapDispatchToProps = dispatch => ({
   onTryAutoSignup: () => dispatch(actions.authCheckState()),
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
