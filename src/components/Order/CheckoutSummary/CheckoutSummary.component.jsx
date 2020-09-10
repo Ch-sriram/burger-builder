@@ -17,9 +17,9 @@ const CheckoutDiv = styled.div`
     margin: auto;
   }
 
-  @media (min-width: 600px) {
+  /* @media (min-width: 600px) {
     width: 500px;
-  }
+  } */
 `;
 
 // RENDERED JSX COMPONENT

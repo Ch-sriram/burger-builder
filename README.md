@@ -150,3 +150,7 @@ Dependency Installation: **`npm i --save redux-thunk`**
 13. Persistent `auth` State with `localStorage` && Fixing Routing Errors using `withRouter()` from `react-router`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/c80a5e75710dd07156e264a8b058a3ff1c920d99)
 14. Guarding Routes: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/575e1f0407059f55513181cf4a13beeadb8d9a7b)
 15. Displaying User Specific Orders: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/1e4a03e1fa691cae4d06e8178cdd1614dc31f551)
+
+### Improving & Fixing 🛠 the 🍔🛠 Project
+
+1. Fixing the Redirect to the Front Page: [Commit Details]()

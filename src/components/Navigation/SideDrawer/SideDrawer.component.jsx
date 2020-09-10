@@ -38,7 +38,7 @@ const sideDrawer = props => {
   return (
     <Aux>
       <Backdrop show={props.open} clicked={props.closed}/>
-      <SideDrawer status={status}>
+      <SideDrawer status={status} onClick={props.closed}>
         <LogoDiv>
           <Logo />
         </LogoDiv>
