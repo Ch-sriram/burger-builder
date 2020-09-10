@@ -13,7 +13,7 @@ class Orders extends Component {
   state = { orders: [], loading: true, }
 
   componentDidMount() {
-    this.props.onFetchOrders(this.props.token);
+    this.props.onFetchOrders(this.props.token, this.props.userId);
   }
 
   render() {
@@ -29,13 +29,26 @@ class Orders extends Component {
       );
     return (
       <div>
-        {ordersList}
+        {ordersList.length > 0 ?
+          ordersList :
+          <p style={{ 'textAlign': 'center' }}>
+            There are no orders made by you!
+          </p>
+        }
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({ orders: state.order.orders, loading: state.order.loading, token: state.auth.token, });
-const mapDispatchToProps = dispatch => ({ onFetchOrders: token => dispatch(actions.fetchOrdersAsync(token)) });
+const mapStateToProps = state => ({
+  orders: state.order.orders,
+  loading: state.order.loading,
+  token: state.auth.token,
+  userId: state.auth.userId
+});
+
+const mapDispatchToProps = dispatch => ({
+  onFetchOrders: (token, userId) => dispatch(actions.fetchOrdersAsync(token, userId)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Orders, axios));
