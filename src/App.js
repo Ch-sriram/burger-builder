@@ -1,6 +1,7 @@
 // LIBRARY IMPORTS
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // CUSTOM COMPONENTS
 import Layout from './components/Layout/Layout.component';
@@ -9,8 +10,13 @@ import Checkout from './containers/Checkout/Checkout.component';
 import Orders from './containers/Orders/Orders.component';
 import Auth from "./containers/Auth/Auth.component";
 import Logout from "./containers/Auth/Logout/Logout.component";
+import * as actions from "./store/actions/index";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.onTryAutoSignup();
+  }
+
   render() {
     return (
       <div>
@@ -28,4 +34,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  onTryAutoSignup: () => dispatch(actions.authCheckState()),
+});
+
+export default withRouter(connect(null, mapDispatchToProps)(App));
