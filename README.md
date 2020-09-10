@@ -153,4 +153,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 
 ### Improving & Fixing 🛠 the 🍔🛠 Project
 
-1. Fixing the Redirect to the Front Page: [Commit Details]()
+1. Fixing the Redirect to the Front Page: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/db00f5813046fc9dc33767d3b7c972134461da5e)
