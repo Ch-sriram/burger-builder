@@ -11,6 +11,7 @@ import Input from '../../../components/UI/Input/Input.component';
 import { FormDiv } from '../../../components/UI/Form/FormDiv.styled';
 import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler.closureHOC";
 import * as actions from "../../../store/actions/index";
+import { checkValidity } from "../../../shared/utility";
 
 
 /**
@@ -64,7 +65,8 @@ class ContactData extends Component {
         validation: {
           required: true,
           minLength: 5,
-          maxLength: 6
+          maxLength: 6,
+          isAlphaNumeric: true,
         },
         valid: false,
         touched: false,
@@ -89,7 +91,10 @@ class ContactData extends Component {
           placeholder: "Your E-Mail",
         },
         value: "",
-        validation: { required: true, },
+        validation: {
+          required: true,
+          isEmail: true,
+        },
         valid: false,
         touched: false,
       },
@@ -131,20 +136,11 @@ class ContactData extends Component {
     this.props.onOrderBurger(order);
   };
 
-  // RIGHT WAY FOR VALIDATION USING INTERPOLATION
-  checkValidity = (value, rules) => {
-    let isValid = true; if (!rules) return true;
-    isValid = rules.required ? value.trim() !== "" && isValid : isValid;
-    isValid = rules.minLength ? value.length >= rules.minLength && isValid : isValid;
-    isValid = rules.maxLength ? value.length <= rules.maxLength && isValid : isValid;
-    return isValid;
-  }
-
   inputChangedHandler = (event, inputIdentifier) => {
     const orderForm = { ...this.state.orderForm }; // deep copy of orderForm => shallow copy of its nested objects
     const formElementCopy = { ...orderForm[inputIdentifier] }; // deep copy of the first nested object
     formElementCopy.value = event.target.value;
-    formElementCopy.valid = this.checkValidity(formElementCopy.value, formElementCopy.validation);
+    formElementCopy.valid = checkValidity(formElementCopy.value, formElementCopy.validation);
     formElementCopy.touched = true;
     orderForm[inputIdentifier] = formElementCopy;
     

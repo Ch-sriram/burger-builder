@@ -9,6 +9,7 @@ import { StyledButton as Button } from "../../components/UI/Buttons/StyledButton
 import { FormDiv } from "../../components/UI/Form/FormDiv.styled";
 import Spinner from "../../components/UI/Spinner/Spinner.component";
 import * as actions from "../../store/actions/index";
+import { checkValidity } from "../../shared/utility";
 
 class Auth extends Component {
   state = {
@@ -52,21 +53,13 @@ class Auth extends Component {
       this.props.onSetAuthRedirectPath();
   }
 
-  checkValidity = (value, rules) => {
-    let isValid = true; if (!rules) return true;
-    isValid = rules.required ? value.trim() !== "" && isValid : isValid;
-    isValid = rules.minLength ? value.length >= rules.minLength && isValid : isValid;
-    isValid = rules.maxLength ? value.length <= rules.maxLength && isValid : isValid;
-    return isValid;
-  };
-
   inputChangedHandler = (event, controlName) => {
     const controls = {
       ...this.state.controls,
       [controlName]: {
         ...this.state.controls[controlName],
         value: event.target.value,
-        valid: this.checkValidity(event.target.value, this.state.controls[controlName].validation),
+        valid: checkValidity(event.target.value, this.state.controls[controlName].validation),
         touched: true,
       }
     };
