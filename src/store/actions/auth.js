@@ -43,16 +43,13 @@ export const auth = (email, password, isSignup) => dispatch => {
   axios
     .post(url, authData)
     .then((res) => {
-      console.log(res);
       const { idToken, localId, expiresIn } = res.data;
-      console.log(idToken, localId, expiresIn);
       // whenever we refresh the webapp, the login information
       // is lost, and so, we will store the token for 3600 
       // seconds, which is 60 minutes = 1 hour, in our local 
       // state persistently using the localStorage API.
       localStorage.setItem("token", idToken);
       const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-      console.log(expirationDate);
       localStorage.setItem("expirationDate", expirationDate);
       localStorage.setItem("userId", localId);
       dispatch(authSuccess(idToken, localId));
@@ -72,7 +69,6 @@ export const authCheckState = () => dispatch => {
     dispatch(logout());
   } else {
     const expirationDate = new Date(localStorage.getItem("expirationDate"));
-    console.log(expirationDate);
     if (expirationDate > new Date()) {
       const userId = localStorage.getItem("userId");
       dispatch(authSuccess(token, userId));

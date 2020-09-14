@@ -156,3 +156,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 1. Fixing the Redirect to the Front Page: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/db00f5813046fc9dc33767d3b7c972134461da5e)
 2. Sharing the Validation Method into `shared/utility.js`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/39208e314246ccaac5ccfba6e1e2085b3563834c)
 3. Using Environment Variables with the help of `process.env.NODE_ENV`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/441642befcab633d78f2f13fcb6bcaa63bd22eea)
+4. Removing `console.log()` statements: [Commit Details]()

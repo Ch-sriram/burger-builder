@@ -33,7 +33,6 @@ const LogoDiv = styled.div`
 `;
 
 const sideDrawer = props => {
-  console.log(props);
   const status = props.open ? "open" : "closed";
   return (
     <Aux>
