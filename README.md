@@ -157,4 +157,4 @@ Dependency Installation: **`npm i --save redux-thunk`**
 2. Sharing the Validation Method into `shared/utility.js`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/39208e314246ccaac5ccfba6e1e2085b3563834c)
 3. Using Environment Variables with the help of `process.env.NODE_ENV`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/441642befcab633d78f2f13fcb6bcaa63bd22eea)
 4. Removing `console.log()` statements: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/03fd53f1d16a5d85416b278bf0dcd1babf58e2d9)
-5. Adding Lazy Loading: [Commit Details]()
+5. Adding Lazy Loading: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/a5cf98d29e3411a8dc2352937338d9ada83822fc)
