@@ -139,7 +139,7 @@ Dependency Installation: **`npm i --save redux-thunk`**
 2. Adding **`ACTION Creators`** for the Auth Form: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/0a75199f9f50f0ba10fa05489739b6541152f27c)
 3. Getting a Token from the Backend for Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/57771e243efe0719b86938a041656073b30a69d4)
 4. Adding Sign-In for Authorized Users: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/2e00bc34c30fe005f6aa303191a4ad7050b613c5)
-5. Storing the Response Token from Sing-In/Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/674882c777eda0514e1432aa4a85ebd1a328ff08)
+5. Storing the Response Token from Sign-In/Sign-Up: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/674882c777eda0514e1432aa4a85ebd1a328ff08)
 6. Adding a `<Spinner />` UI Component for Sign-In & Showing Errors on the View: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/9e2332b6ecde73b692cdb532e8344d4517b68ac5)
 7. Logging Users Out: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/4dae4c4f481f2727a40da9c9f59f4fd989508fb9)
 8. Accessing Protected Resources by Setting Up Rules in Firebase 🔥: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/5e141b593ed1b4c468ee16d17ed9d046d85eb8fd)
