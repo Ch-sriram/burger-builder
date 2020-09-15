@@ -158,3 +158,15 @@ Dependency Installation: **`npm i --save redux-thunk`**
 3. Using Environment Variables with the help of `process.env.NODE_ENV`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/441642befcab633d78f2f13fcb6bcaa63bd22eea)
 4. Removing `console.log()` statements: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/03fd53f1d16a5d85416b278bf0dcd1babf58e2d9)
 5. Adding Lazy Loading: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/a5cf98d29e3411a8dc2352937338d9ada83822fc)
+
+### Testing 🔬🧪 Our 🍔🛠 Project
+
+Test Runner is **[Jest](https://jestjs.io/docs/en/tutorial-react)** & JavaScript Testing Utility is **[Enzyme](https://github.com/enzymejs/enzyme)**.
+
+Installing Dependencies:
+- **`npm install --save enzyme react-test-renderer enzyme-adapter-react-16`**
+- **`npm install --save-dev jest`**
+
+*Note*: If [cra](https://create-react-app.dev/docs/getting-started) is used to create the react app, `jest` will be pre-installed.
+
+1. Testing Functional Components using `describe()`, `it() / test()` & `expect()`: [Commit Details]()
