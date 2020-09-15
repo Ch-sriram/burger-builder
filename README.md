@@ -170,3 +170,4 @@ Installing Dependencies:
 *Note*: If [cra](https://create-react-app.dev/docs/getting-started) is used to create the react app, `jest` will be pre-installed.
 
 1. Testing Functional Components using `describe()`, `it() / test()` & `expect()`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/b2245df8efa3f35105390de479bd094ca7e5b722)
+2. Testing Functional Components Continued: [Commit Details]()
