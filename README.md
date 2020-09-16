@@ -2,7 +2,9 @@
 
 A Demo Application for Building/Customizing a Burger with Meat, Bacon, Cheese & Salad (Lettuce), built using React.
 
-Reade about installation and other details **[here](./README.react-notes.md)**
+Read about installation and other details **[here](./README.react-notes.md)**
+
+Read about deployment details **[here](./DEPLOYMENT_FIREBASE.md)**
 
 ## 💷 Design Overview 📝
 
