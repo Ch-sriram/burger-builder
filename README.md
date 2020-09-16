@@ -1,6 +1,6 @@
 # 🍔 Burger Builder 🛠
 
-A Demo Application for Building/Customizing a Burger with Meat, Bacon, Cheese & Salad (Lettuce), built using React.
+A React+Redux App for Building/Customizing a Burger with Meat, Bacon, Cheese & Salad. **[Live Here](https://burger-builder-ram.web.app/)**.
 
 Read about installation and other details **[here](./README.react-notes.md)**
 
