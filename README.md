@@ -172,3 +172,4 @@ Installing Dependencies:
 1. Testing Functional Components using `describe()`, `it() / test()` & `expect()`: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/b2245df8efa3f35105390de479bd094ca7e5b722)
 2. Testing Functional Components Continued: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/b70e184b50ce35284968534badd8f896d194586a)
 3. Using the enzyme's `contains()` method to test for a specific sub-component inside a component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/7f78d0b78a70a6df0b30afa4422817f8475c0b52)
+4. Testing Containers: [Commit Details]()
