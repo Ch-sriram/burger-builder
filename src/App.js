@@ -9,6 +9,7 @@ import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder.component';
 import Logout from "./containers/Auth/Logout/Logout.component";
 import * as actions from "./store/actions/index";
 import asyncLazy from "./hoc/asyncLazy/asyncLazy.hoc";
+import GithubLink from "./components/UI/Github/Github.component";
 
 // Lazy Loading the Containers
 const asyncCheckout = asyncLazy(() => import("./containers/Checkout/Checkout.component"));
@@ -42,6 +43,7 @@ class App extends Component {
       <div>
         <Layout>
           {routes}
+          <GithubLink />
         </Layout>
       </div>
     );
