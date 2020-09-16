@@ -173,3 +173,4 @@ Installing Dependencies:
 2. Testing Functional Components Continued: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/b70e184b50ce35284968534badd8f896d194586a)
 3. Using the enzyme's `contains()` method to test for a specific sub-component inside a component: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/7f78d0b78a70a6df0b30afa4422817f8475c0b52)
 4. Testing Containers: [Commit Details](https://github.com/Ch-sriram/burger-builder/commit/453747cd0c0ea45176133449a9ace15cb9d54c69)
+5. How to Test Redux: [Commit Details]()
